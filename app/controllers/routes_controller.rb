@@ -7,15 +7,15 @@ class RoutesController < ApplicationController
 
   def new
     @route = Route.new
-  end 
-
-  def show    
   end
 
-  def edit    
+  def show
   end
 
-  def update   
+  def edit
+  end
+
+  def update
     if @route.update(route_params)
       redirect_to @route
     else
@@ -32,18 +32,18 @@ class RoutesController < ApplicationController
     end
   end
 
-  def destroy    
+  def destroy
     @route.destroy
     redirect_to routes_path
   end
 
   private
+
   def route_params
     params.required(:route).permit(:name)
   end
+
   def set_route
     @route = Route.find(params[:id])
   end
-
-
 end
