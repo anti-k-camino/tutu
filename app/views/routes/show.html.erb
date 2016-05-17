@@ -5,6 +5,17 @@
   <%= @route.name %>
 </p>
 
+<% if @route.stations.empty? %>
+  <p>В маршруте нету станций</p>
+<% else %>
+  <p>B маршруте следующие станции : </p>
+  <ul>
+    <% @route.stations.each do |station|%>
+      <li><%= station.name %></li>
+      <% end %>
+  </ul>
+<% end %>
+
 <%= link_to 'Редактировать', edit_route_path(@route) %> |
 <%= link_to 'Назад', routes_path %><br>
 <%= link_to 'Главная', '/'%>

@@ -4,6 +4,16 @@
   <strong>Name:</strong>
   <%= @station.name %>
 </p>
+<%if @station.routes.empty?%>
+  <p>Эта станция ни водном маршруте</p>
+<% else %>
+  <p>Станция в таких маршрутах :</p>  
+  <ul>
+    <% @station.routes.each do |route|%>
+      <li><%= route.name %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= link_to 'Edit', edit_station_path(@station) %> |
 <%= link_to 'Back', stations_path %><br>

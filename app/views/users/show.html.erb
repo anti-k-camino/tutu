@@ -4,6 +4,16 @@
   <strong>Название:</strong>
   <%= @user.name %>
 </p>
+<p>Билеты у пользователя :</p>
+<% if @user.tickets.empty? %>
+  <p>У пользователя нету билетов</p>
+<% else %>
+  <ul>
+   <% @user.tickets.each do |ticket| %>
+    <li><%= ticket.number %></li>
+   <% end %>
+  </ul>
+<% end %>
 
 <%= link_to 'Редактировать', edit_user_path(@user) %> |
 <%= link_to 'Назад', users_path %><br>
