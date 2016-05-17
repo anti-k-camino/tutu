@@ -1,0 +1,10 @@
+<%= form_for(name) do |f| %>
+  <%= render 'common/errors', resource: name %>
+  <div class="field">
+    <%= f.label attribute %><br>
+    <%= f.text_field attribute %>
+  </div>
+  <div class="actions">
+    <%= f.submit "#{ name.new_record? ? 'Создать' : 'Изменить'}" %>
+  </div>
+<% end %>
