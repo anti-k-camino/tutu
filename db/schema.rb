@@ -11,47 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160515154318) do
-
-  create_table "routes", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+ActiveRecord::Schema.define(version: 20_160_515_154_318) do
+  create_table 'routes', force: :cascade do |t|
+    t.string   'name'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  create_table "stations", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'stations', force: :cascade do |t|
+    t.string   'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "stations_routes", force: :cascade do |t|
-    t.integer "station_id"
-    t.integer "route_id"
+  create_table 'stations_routes', force: :cascade do |t|
+    t.integer 'station_id'
+    t.integer 'route_id'
   end
 
-  create_table "tickets", force: :cascade do |t|
-    t.string   "number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "train_id"
-    t.integer  "user_id"
-    t.integer  "start_station_id"
-    t.integer  "finish_station_id"
+  create_table 'tickets', force: :cascade do |t|
+    t.string   'number'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
+    t.integer  'train_id'
+    t.integer  'user_id'
+    t.integer  'start_station_id'
+    t.integer  'finish_station_id'
   end
 
-  create_table "trains", force: :cascade do |t|
-    t.string   "number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "station_id"
-    t.integer  "route_id"
+  create_table 'trains', force: :cascade do |t|
+    t.string   'number'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
+    t.integer  'station_id'
+    t.integer  'route_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table 'users', force: :cascade do |t|
+    t.string   'name'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
-
 end
