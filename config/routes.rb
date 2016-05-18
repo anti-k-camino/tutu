@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :routes
   resources :tickets
   resources :users
+  resources :wagons
 
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.

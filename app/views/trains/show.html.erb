@@ -20,6 +20,16 @@
     Не указано
   <% end %>
 </p>
+<p>
+  <strong> Количество вагонов : </strong>
+  <%= @train.wagons.count %><br>
+
+  <strong>  купейных : </strong>
+  <%= render 'sits_count', str: 'Купе'%>
+
+  <strong> плацкартных  : </strong>  
+  <%= render 'sits_count', str: 'Плацкарт'%>
+</p>
 
 <%= link_to 'Редактировать : ', edit_train_path(@train) %> |
 <%= link_to 'Назад', trains_path %><br>
