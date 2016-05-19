@@ -4,8 +4,8 @@ class Train < ActiveRecord::Base
   has_many :tickets
   has_many :wagons
   validates :number, presence: true
-  
-  def count(arr, meth)
-    arr.inject(0) {|acc, iter| acc += iter.meth }
+
+  def count(arr, _meth)
+    arr.inject(0) { |acc, iter| acc += iter.meth }
   end
 end
