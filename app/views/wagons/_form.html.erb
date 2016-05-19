@@ -6,7 +6,7 @@
   </div>
   <div class="field">
     <%= f.label :types, "Тип" %>     
-    <%= f.select(:types, options_for_select(['Купе', 'Плацкарт'])) %>
+    <%= f.select(:types, options_for_select([@wagon.coupe, @wagon.platzkart])) %>
   </div>  
   <div class="field">
     <%= f.label :upper, "Верхняя полка" %>     
