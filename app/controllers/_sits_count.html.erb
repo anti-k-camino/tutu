@@ -1,6 +1,6 @@
   <% arr = @train.wagons.where(types:str) %>
-  <%= coupe = arr.size %>
+  <%= arr.size %>
   <strong> || верхних полок : </strong>
-  <%= arr.inject(0) {|acc, iter| acc += iter.upper }%>
+  <%= @train.count(arr, :upper)%>
    <strong> нижних полок : </strong>
-  <%= arr.inject(0) {|acc, iter| acc += iter.lower }%><br>
+  <%= @train.count(arr, :lower)%><br>
