@@ -1,13 +1,12 @@
 class Train < ActiveRecord::Base
   belongs_to :station
   belongs_to :route
-  has_many :tickets
-  has_many :wagons
-  has_many :carriages
+  has_many :tickets  
+  has_many :carriages, dependent: :destroy
   validates :number, presence: true
 
-  def trains_size
-    carriages.count
+  def train_last
+    carriages.last
   end
 
   def counter(type_name)

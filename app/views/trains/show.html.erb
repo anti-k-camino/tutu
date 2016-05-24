@@ -26,7 +26,11 @@
   <strong>  купейных : </strong>  
   <%= render 'links', resource: :CoupeCarriage %>
   <strong> плацкартных  : </strong> 
-  <%= render 'links', resource: :EconomyCarriage %>  
+  <%= render 'links', resource: :EconomyCarriage %> 
+  <strong> св  : </strong> 
+  <%= render 'links', resource: :SvCarriage %>  
+  <strong> сидячих  : </strong> 
+  <%= render 'links', resource: :SitonlyCarriage %>   
 </p>
 
 <%= link_to 'Редактировать : ', edit_train_path(@train) %> |

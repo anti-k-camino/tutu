@@ -6,7 +6,7 @@
   </div>
   <div class="field">
     <%= f.label :type, "Тип" %>     
-    <%= f.select(:type, options_for_select([:CoupeCarriage, :EconomyCarriage])) %>
+    <%= f.select(:type, options_for_select([:CoupeCarriage, :EconomyCarriage, :SvCarriage, :SitonlyCarriage])) %>
   </div>  
   <div class="field">
     <%= f.label :top_seats, "Верхняя полка" %>     
@@ -23,6 +23,10 @@
   <div class="field">
     <%= f.label :side_bottom_seats, "Боковая нижняя полка" %>     
     <%= f.number_field :side_bottom_seats %>
+  </div> 
+  <div class="field">
+    <%= f.label :sitonly_seats, "Сидячие места" %>     
+    <%= f.number_field :sitonly_seats %>
   </div> 
   <div class="actions">
     <%= f.submit "#{@carriage.new_record? ? 'Создать' : 'Изменить'}" %>

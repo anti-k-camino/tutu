@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :carriages
   resources :coupe_carriage, controller: 'carriages', type: 'CoupeCarriage'
   resources :economy_carriage, controller: 'carriages', type: 'EconomyCarriage'
+  resources :sv_carriage, controller: 'carriages', type: 'SvCarriage'
+  resources :sitonly_carriage, controller: 'carriages', type: 'SitonlyCarriage'
 
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
