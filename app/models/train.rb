@@ -11,10 +11,7 @@ class Train < ActiveRecord::Base
   end
 
   def counter(type_name)
-    carriages.where(type: type_name).count
+    carriages.where(type: type_name)
   end
-
-  def count(arr, meth)
-    arr.inject(0) { |acc, iter| acc += iter.send meth.to_sym }
-  end
+    
 end
