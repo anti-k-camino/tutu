@@ -5,12 +5,19 @@ class Train < ActiveRecord::Base
   has_many :carriages, dependent: :destroy
   validates :number, presence: true
 
+  def carriage_order(head)
+    head ? carriages.order(:number) : carriages.order(:number).reverse_order
+  end
+
+  def tseats(carriage_type, seats_type)    
+    carriages.where(type: carriage_type).sum(seats_type)    
+  end
+
   def train_last
     carriages.last
   end
 
   def counter(type_name)
     carriages.where(type: type_name)
-  end
-    
+  end     
 end

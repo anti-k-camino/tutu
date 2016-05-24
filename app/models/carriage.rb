@@ -4,11 +4,11 @@ class Carriage < ActiveRecord::Base
 
   validates :number, presence: true, uniqueness: { scope: :train_id }
 
-  def self.types
-    %w(CoupeCarriage, EconomyCarriage, SvCarriage, SitonlyCarriage)
-  end
-  # scope :CoupeCarriages, -> { where(type: 'CoupeCarriage') }
-  # scope :EconomyCarriages, -> { where(type: 'EconomyCarriage') }
+  #def self.types
+  #  %w(CoupeCarriage, EconomyCarriage, SvCarriage, SitonlyCarriage)
+  #end
+  scope :CoupeCarriages, -> { where(type: 'CoupeCarriage') }
+  scope :EconomyCarriages, -> { where(type: 'EconomyCarriage') }
 
   private  
 
