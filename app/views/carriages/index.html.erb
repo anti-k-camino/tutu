@@ -8,10 +8,13 @@
     </tr>
   </thead>
   <tbody>
-    <% @carriages.each do |carriage| %>
-      <tr>
-        <td> <%= carriage.type %></td>      
-      </tr>
+   <% @carriages.each do |carriage|%>
+    <tr>
+      <td><%= carriage.type %></td>
+      <td><%= link_to 'Показать', carriage %></td>
+      <td><%= link_to 'Редактировать', edit_carriage_path(carriage) %></td>
+      <td><%= link_to 'Удалить', carriage, method: :delete, data: {confirm: "Вы уверенны?"} %></td>
+    </tr>
    <% end %>
   </tbody>
 </table>

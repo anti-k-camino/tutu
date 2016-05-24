@@ -14,10 +14,12 @@
   <%= @carriage.top_seats %><br>
   <strong> Нижних полок :</strong>
   <%= @carriage.bottom_seats %><br>
-  <strong> Боковых верхних полок : </strong>
-  <%= @carriage.side_top_seats %><br>
-  <strong> Боковых нижних полок :</strong>
-  <%= @carriage.side_bottom_seats %>
+  <% if @carriage.type == 'EconomyCarriage' %>
+    <strong> Боковых верхних полок : </strong>
+    <%= @carriage.side_top_seats %><br>
+    <strong> Боковых нижних полок :</strong>
+    <%= @carriage.side_bottom_seats %>
+  <% end %>
 </p>
 <%= link_to 'Редактировать', edit_carriage_path(@carriage)%> | 
 <%= link_to 'Назад', carriages_path%><br>
