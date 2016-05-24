@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   resources :wagons
   resources :stationsroute
   resources :carriages
-  resources :coupe_carriage, controller: 'carriages', type: 'Coupe_carriage'
+  resources :coupe_carriage, controller: 'carriages', type: 'CoupeCarriage'
+  resources :economy_carriage, controller: 'carriages', type: 'EconomyCarriage'
 
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.

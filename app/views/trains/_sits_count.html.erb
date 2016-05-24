@@ -1,6 +1,3 @@
-  <% arr = @train.wagons.where(types:str) %>
-  <%= coupe = arr.size %>
-  <strong> || верхних полок : </strong>
-  <%= @train.count(arr, "upper")%>
-   <strong> нижних полок : </strong>
-  <%= @train.count(arr, "lower")%><br>
+  <% arr = @train.carriages.where(type:str) %>
+  <%= @train.carriages.count %>  
+ 
