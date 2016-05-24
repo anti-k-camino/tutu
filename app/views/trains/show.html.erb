@@ -23,13 +23,10 @@
 <p>
   <strong> Количество вагонов : </strong>
   <%= @train.carriages.count %><br>
-  <strong>  купейных : </strong>
-  <%= @train.counter(:CoupeCarriage).count %><br>  
-  <% @train.counter(:CoupeCarriage).each do |coupe|%>
-    <%= link_to "Вагон номер #{coupe.number} ", carriage_path %><br>
-  <% end %>
+  <strong>  купейных : </strong>  
+  <%= render 'links', resource: :CoupeCarriage %>
   <strong> плацкартных  : </strong> 
-  <%= @train.counter(:EconomyCarriage).count %><br>  
+  <%= render 'links', resource: :EconomyCarriage %>  
 </p>
 
 <%= link_to 'Редактировать : ', edit_train_path(@train) %> |
