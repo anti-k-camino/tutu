@@ -1,16 +1,14 @@
 class Carriage < ActiveRecord::Base
   belongs_to :train
-  before_validation :set_number
 
   validates :number, presence: true, uniqueness: { scope: :train_id }
 
-  #def self.types
-  #  %w(CoupeCarriage, EconomyCarriage, SvCarriage, SitonlyCarriage)
-  #end
-  scope :CoupeCarriages, -> { where(type: 'CoupeCarriage') }
-  scope :EconomyCarriages, -> { where(type: 'EconomyCarriage') }
-  scope :SvCarriages, -> { where(type: 'SvCarriage') }
-  scope :SitonlyCarriages, -> { where(type: 'SitonlyCarriage') }
+  before_validation :set_number
+  
+  scope :coupe_carriages, -> { where(type: 'CoupeCarriage') }
+  scope :economy_carriages, -> { where(type: 'EconomyCarriage') }
+  scope :sv_carriages, -> { where(type: 'SvCarriage') }
+  scope :sitonly_carriages, -> { where(type: 'SitonlyCarriage') }
 
   private  
 
