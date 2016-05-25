@@ -9,6 +9,8 @@ class Carriage < ActiveRecord::Base
   #end
   scope :CoupeCarriages, -> { where(type: 'CoupeCarriage') }
   scope :EconomyCarriages, -> { where(type: 'EconomyCarriage') }
+  scope :SvCarriages, -> { where(type: 'SvCarriage') }
+  scope :SitonlyCarriages, -> { where(type: 'SitonlyCarriage') }
 
   private  
 
