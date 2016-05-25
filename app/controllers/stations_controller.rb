@@ -63,12 +63,10 @@ class StationsController < ApplicationController
 
   private
 
-  
   def set_station
     @station = Station.find(params[:id])
   end
 
-  
   def station_params
     params.require(:station).permit(:name)
   end

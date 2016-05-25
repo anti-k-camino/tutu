@@ -5,7 +5,7 @@ class Route < ActiveRecord::Base
 
   validates :name, presence: true
   validate :set_stations
-  scope :stations, -> { order(:stations_routes.number)}
+  scope :stations, -> { order(:stations_routes.number) }
   before_validation :set_name
 
   private
