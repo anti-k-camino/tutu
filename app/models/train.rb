@@ -5,8 +5,8 @@ class Train < ActiveRecord::Base
   has_many :carriages, dependent: :destroy
   validates :number, presence: true
 
-  def carriage_order(head)
-    head ? carriages.order(:number) : carriages.order(:number).reverse_order
+  def carriage_order
+    self.head ? carriages.order(:number) : carriages.order('number DESC')
   end
 
   def tseats(carriage_type, seats_type)    

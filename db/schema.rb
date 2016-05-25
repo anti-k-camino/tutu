@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523145329) do
+ActiveRecord::Schema.define(version: 20160525112701) do
 
   create_table "carriages", force: :cascade do |t|
     t.integer  "number"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160523145329) do
     t.datetime "updated_at"
     t.integer  "station_id"
     t.integer  "route_id"
+    t.boolean  "head",       default: true
   end
 
   create_table "users", force: :cascade do |t|
