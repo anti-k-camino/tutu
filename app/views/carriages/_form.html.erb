@@ -1,6 +1,6 @@
 <%= form_for(@carriage) do |f| %>
-  <% render 'common/errors', resource: @carriage %>
-   <div class="field">
+  <%= render 'common/errors', resource: @carriage %>  
+   <div class="field">    
     <%= f.label :train, "Номер поезда"%>
     <%= f.collection_select :train_id, Train.all, :id, :number %>
   </div>
