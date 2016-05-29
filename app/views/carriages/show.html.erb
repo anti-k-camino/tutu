@@ -14,6 +14,6 @@
   <%= @carriage.number %><br>
   <%= render @carriage.type.underscore %>
 </p>
-<%= link_to 'Редактировать', edit_carriage_path(@carriage)%> | 
-<%= link_to 'Назад', carriages_path%><br>
+<%= link_to 'Редактировать', edit_train_carriage_path(@train, @carriage)%> | 
+<%= link_to 'Назад', trains_path%><br>
 <%= link_to 'Главная', '/'%>

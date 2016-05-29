@@ -5,7 +5,7 @@
     <%= f.text_field :name %>
   </div>-->
   <div>
-    <%= f.label :station_ids %>
+    <%= f.label :station_ids, 'Станции' %>
     <%= f.collection_select :station_ids, Station.all, :id, :name, {}, {multiple: true}%>   
   </div>
   <div class="actions">
