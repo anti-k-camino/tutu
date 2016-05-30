@@ -24,11 +24,11 @@
             <%= form_tag update_position_station_path(station), method: :patch do %>              
               <%= number_field_tag :position, station.position_in(@route) %>  
               
-              <%= label :arrival, "Прибытие" %>
+              <%= label :arrival, "Прибытие :" %>
               <%= time_field_tag :arrival, station.schedule_at(@route, :arrival) %> 
               
               
-              <%= label :departing, "Отправка"%>
+              <%= label :departing, "Отправка :"%>
               <%= time_field_tag :departing, station.schedule_at(@route, :departing) %> 
                                      
               <%= hidden_field_tag :route_id, @route.id %>

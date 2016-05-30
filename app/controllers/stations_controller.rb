@@ -1,5 +1,6 @@
 class StationsController < ApplicationController
-  before_action :set_station, only: [:show, :edit, :update, :destroy]
+  before_action :set_station, only: [:show, :edit, :update, :destroy, :update_position, :update_arrival, :update_departing]
+  before_action :set_route, only: [:update_position, :update_arrival, :update_departing]
 
   # GET /stations
   # GET /stations.json
@@ -61,10 +62,19 @@ class StationsController < ApplicationController
     end
   end
 
+  def update_position    
+    @station.update_position(@route, params[:position], params[:arrival], params[:departing])
+    redirect_to @route
+  end
+
   private
 
   def set_station
     @station = Station.find(params[:id])
+  end
+
+  def set_route
+    @route = Route.find(params[:route_id])
   end
 
   def station_params

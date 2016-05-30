@@ -4,9 +4,14 @@ class Route < ActiveRecord::Base
   has_many :stations, through: :stations_routes
 
   validates :name, presence: true
-  validate :set_stations
-  scope :stations, -> { order('stations_routes.number') }
+  validate :set_stations  
   before_validation :set_name
+
+  def self.search(search_begin, search_end)     
+    res = self.joins(:stations).where("stations.name LIKE ?" ,"%#{search_begin}%" ).uniq 
+
+    #self.where("stations.name LIKE ?","%#{search_end}%")
+  end
 
   private
 

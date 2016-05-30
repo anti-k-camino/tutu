@@ -3,7 +3,7 @@ class Carriage < ActiveRecord::Base
 
   validates :number, presence: true, uniqueness: { scope: :train_id }
 
-  before_validation :set_number
+  #before_validation :set_number
 
   scope :coupe_carriages, -> { where(type: 'CoupeCarriage') }
   scope :economy_carriages, -> { where(type: 'EconomyCarriage') }

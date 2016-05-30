@@ -1,0 +1,7 @@
+<h1>Возможные маршруты</h1>
+<% @routes.each do |route|%>
+  <ul>
+    <li><%= route.name %></li>
+  </ul>
+<% end %>
+<%= link_to 'Главная', '/'%>

@@ -1,16 +1,38 @@
 class Station < ActiveRecord::Base
+  validates :name, presence: true  
   has_many :trains
   has_many :stations_routes
   has_many :routes, through: :stations_routes
   has_many :start_tickets, class_name: 'Ticket', foreign_key: :start_station_id
   has_many :finish_tickets, class_name: 'Ticket', foreign_key: :finish_ticket_id
-  validates :name, presence: true
+  
+  scope :ordered, -> { joins(:stations_routes).order("stations_routes.position").uniq } 
 
-  def add_position(route, num)
-    stations_routes.update(route, number: num)
+  def update_position(route, position, arrival, departing)  
+    station_route = station_route(route) 
+    if station_route
+      station_route.update(position: position)
+      station_route.update(arrival: arrival)
+      station_route.update(departing: departing)      
+    end    
   end
 
-  def get_position(route)
-    stations_routes.where('route_id = ?', route).first.number
+  def position_in(route)    
+    station_route(route).try(:position)
+  end
+
+  def schedule_at(route, type)    
+   a = station_route(route).try(type)   
+   a.to_s(:time) if a
+  end
+
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%")
+  end
+  
+
+  protected
+  def station_route(route)
+    @station_route ||= stations_routes.where(route: route).first
   end
 end
