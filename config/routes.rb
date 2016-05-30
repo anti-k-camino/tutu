@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-  get 'carriages/coupe_form'
+  
 
   resources :stations do
-    patch :update_position, on: :member
+    patch :update_position, on: :member      
   end
   resources :trains do
     resources :carriages
@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   end  
   resources :routes
   resources :tickets
-  resources :users  
+  resources :users
+  resource :search, only: [:new, :show, :edit] 
   #resources :wagons
   #resources :stationsroute
   #resources :carriages
