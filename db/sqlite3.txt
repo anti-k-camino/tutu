@@ -1,0 +1,14 @@
+﻿-- Describe CARRIAGES
+CREATE TABLE "carriages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "top_seats" integer, "bottom_seats" integer, "side_top_seats" integer, "side_bottom_seats" integer, "train_id" integer, "type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "sitonly_seats" integer)
+-- Describe ROUTES
+CREATE TABLE "routes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime, "updated_at" datetime)
+-- Describe STATIONS
+CREATE TABLE "stations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+-- Describe STATIONS_ROUTES
+CREATE TABLE "stations_routes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "station_id" integer, "route_id" integer, "position" integer, "departing" time, "arrival" time)
+-- Describe TICKETS
+CREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" varchar, "created_at" datetime, "updated_at" datetime, "train_id" integer, "user_id" integer, "start_station_id" integer, "finish_station_id" integer)
+-- Describe USERS
+CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime, "updated_at" datetime)
+-- Describe TRAINS
+CREATE TABLE "trains" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" varchar, "created_at" datetime, "updated_at" datetime, "station_id" integer, "route_id" integer, "head" boolean DEFAULT 't')

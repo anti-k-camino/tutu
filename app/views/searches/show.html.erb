@@ -2,6 +2,11 @@
 <% @routes.each do |route|%>
   <ul>
     <li><%= route.name %></li>
+    <% if route.trains.count > 0 %>
+      <% route.trains.each do |train|%>
+        <li> Поезд номер : <%=train.number%></li>
+      <%end%>
+    <% end %>
   </ul>
 <% end %>
 <%= link_to 'Главная', '/'%>

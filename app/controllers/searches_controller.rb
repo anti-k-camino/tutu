@@ -4,7 +4,7 @@ class SearchesController < ApplicationController
   end
 
   def show
-    @routes = Route.search(params[:search_begin], params[:search_end])
+    @routes = Route.search(params[:search_begin][:station_id], params[:search_end][:station_id])
   end
 
 end
