@@ -5,7 +5,9 @@
       <li><%= route.name %></li>
       <% if route.trains.count > 0 %>
         <% route.trains.each do |train|%>
-        <p> Поезд номер : <%= train.number %></p>        
+        <p> Поезд номер : <%= train.number %>
+          <%= link_to 'Купить билет', new_ticket_path(ticket: {number: 1, start_station_id: params[:search][:start_id], finish_station_id: params[:search][:finish_id] } )%>
+        </p>        
           <ul>
             <li> <%= route.station(params[:search][:start_id]).name %><br>
               Прибывает в :

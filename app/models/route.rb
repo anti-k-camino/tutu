@@ -27,10 +27,6 @@ class Route < ActiveRecord::Base
     stations.find(id)
   end
 
-  def st
-    stations.find(params[:search][:start_id])
-  end
-
   private
 
   def set_name

@@ -1,16 +1,13 @@
 <p id="notice"><%= notice %></p>
 <p>
   <strong>Название:</strong>
-  <%= @ticket.number %>
+  <%= @ticket.number %><br>
+  <strong>Start station</strong>
+  <%= @ticket.start_station.name %><br>
+  <strong>Finish station</strong>
+  <%= @ticket.finish_station.name%>
 </p>
-<!-- <p>
-  <strong>Начало:</strong>
-  <%= @ticket.start_station.name %>
-</p>
-<p>
-  <strong>Конец:</strong>
-  <%= @ticket.finish_station.name %>
-</p> -->
+
 
 <%= link_to 'Редактировать', edit_ticket_path(@ticket) %> |
 <%= link_to 'Назад', tickets_path %><br>
