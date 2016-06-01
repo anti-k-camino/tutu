@@ -26,7 +26,8 @@
               
               <%= label :arrival, "Прибытие :" %>
              <!-- <%= time_field_tag :arrival, station.schedule_at(@route, :arrival) %> -->
-              <%= select_time( station.schedule_at(@route, :arrival), prefix: :arrival) %>
+              <!--<%= select_time( station.schedule_at(@route, :arrival), prefix: :arrival) %>-->
+              <%= time_field_tag :arrival, station.schedule_at(@route, :arrival) %>
               
               <%= label :departing, "Отправка :"%>
               <%= time_field_tag :departing, station.schedule_at(@route, :departing) %>

@@ -1,16 +1,32 @@
 <h1>Возможные маршруты</h1>
-<% if @routes.size > 0 %>
+<% if @routes.count > 0 %>
   <% @routes.each do |route|%>
     <ul>
       <li><%= route.name %></li>
       <% if route.trains.count > 0 %>
         <% route.trains.each do |train|%>
-          <li> Поезд номер : <%= train.number %></li>
+        <p> Поезд номер : <%= train.number %></p>        
+          <ul>
+            <li> <%= route.station(params[:search][:start_id]).name %><br>
+              Прибывает в :
+             <%= route.station(params[:search][:start_id]).schedule_at(route, :arrival).to_s(:time) %>
+              Отправляется в :
+             <%= route.station(params[:search][:start_id]).schedule_at(route, :departing).to_s(:time) %>
+            </li> 
+            <li> <%= route.station(params[:search][:finish_id]).name %><br>
+              Прибывает в :
+             <%= route.station(params[:search][:finish_id]).schedule_at(route, :arrival).to_s(:time) %>
+              Отправляется в :
+             <%= route.station(params[:search][:finish_id]).schedule_at(route, :departing).to_s(:time) %>
+            </li>            
+          </ul>
         <%end%>
+      <% else %>
+        <h3>На маршруте нету поездов </h3>
       <% end %>
     </ul>
   <% end %>
 <% else %>
-  <h3>Ничего не найдено</h3>
+  <h3> Ничего не найдено </h3>
 <% end %>
 <%= link_to 'Главная', '/'%>

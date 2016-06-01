@@ -23,6 +23,14 @@ class Route < ActiveRecord::Base
     res & res1
   end 
 
+  def station(id)
+    stations.find(id)
+  end
+
+  def st
+    stations.find(params[:search][:start_id])
+  end
+
   private
 
   def set_name
