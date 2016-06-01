@@ -20,12 +20,8 @@ class Route < ActiveRecord::Base
 
     res = self.joins(:stations).where("station_id = ?", "#{search_begin}")
     res1 = self.joins(:stations).where("station_id = ?", "#{search_end}")
-    res & res1        
+    res & res1
   end 
-
-  def station(id)
-    stations.find(id)
-  end
 
   private
 

@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   end
   resources :trains do
     resources :carriages
-    resources :coupe_carriages, controller: 'carriages', type: 'CoupeCarriage'
-    resources :economy_carriages, controller: 'carriages', type: 'EconomyCarriage'
-    resources :sv_carriages, controller: 'carriages', type: 'SvCarriage'
-    resources :sitonly_carriages, controller: 'carriages', type: 'SitonlyCarriage'
+    resources :coupe_carriages, controller: 'carriages'
+    resources :economy_carriages, controller: 'carriages'
+    resources :sv_carriages, controller: 'carriages'
+    resources :sitonly_carriages, controller: 'carriages'
   end  
   resources :routes
   resources :tickets

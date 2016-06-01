@@ -14,8 +14,7 @@ class CarriagesController < ApplicationController
   def edit
   end
 
-  def update 
-  puts "YOUUUUUHOOOOOOO#{@carriage} +++++++++ #{carriage_params}"    
+  def update       
     if @carriage.update(carriage_params)     
       redirect_to @train
     else

@@ -25,11 +25,11 @@
               <%= number_field_tag :position, station.position_in(@route) %>  
               
               <%= label :arrival, "Прибытие :" %>
-              <%= time_field_tag :arrival, station.schedule_at(@route, :arrival) %> 
-              
+             <!-- <%= time_field_tag :arrival, station.schedule_at(@route, :arrival) %> -->
+              <%= select_time( station.schedule_at(@route, :arrival), prefix: :arrival) %>
               
               <%= label :departing, "Отправка :"%>
-              <%= time_field_tag :departing, station.schedule_at(@route, :departing) %> 
+              <%= time_field_tag :departing, station.schedule_at(@route, :departing) %>
                                      
               <%= hidden_field_tag :route_id, @route.id %>
               <%= submit_tag "Изменить" %>

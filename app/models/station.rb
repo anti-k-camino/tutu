@@ -21,14 +21,15 @@ class Station < ActiveRecord::Base
     station_route(route).try(:position)
   end
 
-  def schedule_at(route, type)    
-   a = station_route(route).try(type)   
-   a.to_s(:time) if a
-  end
+  def schedule_at(route, type) 
 
-  def self.search(search)
-    where("name LIKE ?", "%#{search}%")
+   puts station_route(route).try(type) 
+   station_route(route).try(type)
+
+   #puts"Trolrorlol lolo lolo #{a.to_s} YYYYYHHHAAAAA"   
+   #a.to_s(:datetime) if a
   end
+  
   
 
   protected

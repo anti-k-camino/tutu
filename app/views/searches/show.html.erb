@@ -1,12 +1,16 @@
 <h1>Возможные маршруты</h1>
-<% @routes.each do |route|%>
-  <ul>
-    <li><%= route.name %></li>
-    <% if route.trains.count > 0 %>
-      <% route.trains.each do |train|%>
-        <li> Поезд номер : <%=train.number%></li>
-      <%end%>
-    <% end %>
-  </ul>
+<% if @routes.size > 0 %>
+  <% @routes.each do |route|%>
+    <ul>
+      <li><%= route.name %></li>
+      <% if route.trains.count > 0 %>
+        <% route.trains.each do |train|%>
+          <li> Поезд номер : <%= train.number %></li>
+        <%end%>
+      <% end %>
+    </ul>
+  <% end %>
+<% else %>
+  <h3>Ничего не найдено</h3>
 <% end %>
 <%= link_to 'Главная', '/'%>
