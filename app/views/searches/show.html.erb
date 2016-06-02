@@ -9,7 +9,7 @@
           <%= link_to 'Купить билет', new_ticket_path(ticket: { train_id: train, start_station_id: params[:search][:start_id], finish_station_id: params[:search][:finish_id] } )%>
         </p>        
           <ul>
-            <li> <%= route.station(params[:search][:start_id]).name %><br>
+            <li> <%= @start.name %><br>
               Прибывает в :
              <%= @start.schedule_at(route, :arrival).to_s(:time) %>
               Отправляется в :
