@@ -1,9 +1,15 @@
-class StationsRoute < ActiveRecord::Base
-  validates :station_id, uniqueness: { scope: :route_id }
-  # validates :position, uniqueness: { scope: :route_id }
-  # after_update :set_schedule
+class StationsRoute < ActiveRecord::Base  
   belongs_to :station
   belongs_to :route
+  validate :check_schedule, on: :update
+
+  validates :station_id, uniqueness: { scope: :route_id }
+  
+  def check_schedule
+    unless self.arrival.class == ActiveSupport::TimeWithZone      
+      route.errors[:base] << 'Неверный формат времени!'
+    end
+  end
 
   private
 
