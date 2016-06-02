@@ -1,19 +1,17 @@
 class StationsRoute < ActiveRecord::Base  
   belongs_to :station
-  belongs_to :route
-  validate :check_schedule, on: :update
-
+  belongs_to :route 
   validates :station_id, uniqueness: { scope: :route_id }
+  validate :check_schedule, on: :update#НЕ РАБОТАЕТ НА UPDATE, на CREATE таки да работает
   
-  def check_schedule
-    unless self.arrival.class == ActiveSupport::TimeWithZone      
-      route.errors[:base] << 'Неверный формат времени!'
-    end
-  end
+ 
 
   private
 
-  def set_schedule
-    errors.add(:base, "Время в формате 'hh:mm:ss' или 'hh:mm' ") unless arrival.class == Time
+  def check_schedule
+    unless (self.arrival.class == ActiveSupport::TimeWithZone  &&  self.departing.class == ActiveSupport::TimeWithZone)
+      route.errors[:base] << 'Неверный формат времени!'
+    end
   end
+ 
 end
