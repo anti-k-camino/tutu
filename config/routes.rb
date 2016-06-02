@@ -5,11 +5,7 @@ Rails.application.routes.draw do
     patch :update_position, on: :member
   end
   resources :trains do
-    resources :carriages, shallow: true 
-    resources :coupe_carriages, controller: 'carriages'
-    resources :economy_carriages, controller: 'carriages'
-    resources :sv_carriages, controller: 'carriages'
-    resources :sitonly_carriages, controller: 'carriages' 
+    resources :carriages, shallow: true        
   end
    
  

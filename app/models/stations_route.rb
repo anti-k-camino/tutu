@@ -2,7 +2,7 @@ class StationsRoute < ActiveRecord::Base
   belongs_to :station
   belongs_to :route 
   validates :station_id, uniqueness: { scope: :route_id }
-  validate :check_schedule, on: :update#НЕ РАБОТАЕТ НА UPDATE, на CREATE таки да работает
+  validate :check_schedule, on: :update_position#НЕ РАБОТАЕТ НА UPDATE, на CREATE таки да работает
   
  
 

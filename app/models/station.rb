@@ -8,8 +8,8 @@ class Station < ActiveRecord::Base
 
   scope :ordered, -> { joins(:stations_routes).order('stations_routes.position').uniq }
 
-  def update_position(route, position, arrival, departing)
-    station_route = station_route(route)
+  def update_position_schedule(route, position, arrival, departing)# is renamed but left in one
+    station_route = station_route(route)#method for the purpose of one query
     if station_route
       station_route.update(position: position, arrival: arrival, departing: departing )      
     end
@@ -22,6 +22,8 @@ class Station < ActiveRecord::Base
   def schedule_at(route, type)    
     station_route(route).try(type)    
   end
+
+
   protected
 
   def station_route(route)

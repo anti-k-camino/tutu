@@ -1,6 +1,6 @@
 class StationsController < ApplicationController
-  before_action :set_station, only: [:show, :edit, :update, :destroy, :update_position, :update_arrival, :update_departing]
-  before_action :set_route, only: [:update_position, :update_arrival, :update_departing]
+  before_action :set_station, only: [:show, :edit, :update, :destroy, :update_position]
+  before_action :set_route, only: [:update_position]
 
   # GET /stations
   # GET /stations.json
@@ -63,7 +63,7 @@ class StationsController < ApplicationController
   end
 
   def update_position
-    @station.update_position(@route, params[:position], params[:arrival], params[:departing])
+    @station.update_position_schedule(@route, params[:position], params[:arrival], params[:departing])
     redirect_to @route
   end
 
