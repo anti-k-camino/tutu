@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :stations do
-    patch :update_position, on: :member
+    patch :update_station_attributes, on: :member
   end
   resources :trains do
     resources :carriages, shallow: true        
