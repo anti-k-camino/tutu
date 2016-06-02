@@ -3,7 +3,8 @@
   <p>
     <%=  f.hidden_field :train_id, value: params[:ticket][:train_id] %>      
     <%=  f.hidden_field :start_station_id, value: params[:ticket][:start_station_id] %>
-    <%=  f.hidden_field :finish_station_id, value: params[:ticket][:finish_station_id]%>    
+    <%=  f.hidden_field :finish_station_id, value: params[:ticket][:finish_station_id]%> 
+    <%=  f.hidden_field :user_id, value: params[:ticket][:user_id]%>    
   </p>
   <div class="field">
     <%= f.label :number, "Праспорт" %><br>

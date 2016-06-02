@@ -6,7 +6,7 @@
       <% if route.trains.count > 0 %>
         <% route.trains.each do |train|%>
         <p> Поезд номер : <%= train.number %>
-          <%= link_to 'Купить билет', new_ticket_path(ticket: { train_id: train, start_station_id: params[:search][:start_id], finish_station_id: params[:search][:finish_id] } )%>
+          <%= link_to 'Купить билет', new_ticket_path(ticket: { train_id: train, start_station_id: params[:search][:start_id], finish_station_id: params[:search][:finish_id], user_id: User.first } )%>
         </p>        
         <%= render 'schedule', start:@start, finish:@finish, route: route%>
         <%end%>

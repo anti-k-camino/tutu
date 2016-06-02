@@ -12,6 +12,7 @@
     <td width=100px>Паспорт </td>
     <td width=100px>Имя</td>
     <td width=100px>Фамилия</td>
+    <td>Покупатель</td>
    </tr>
   </thead>
   <tbody>
@@ -25,6 +26,7 @@
    <td><%= @ticket.number %></td>
    <td><%= @ticket.name %></td>
    <td><%= @ticket.surname %></td>  
+   <td><%= @ticket.user.name %></td>
   </tr>
   </tbody>
 </table>

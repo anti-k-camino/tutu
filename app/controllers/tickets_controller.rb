@@ -1,4 +1,4 @@
-class TicketsController < ApplicationController
+class TicketsController < ApplicationController  
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -41,7 +41,7 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require(:ticket).permit(:train_id, :number, :start_station_id, :finish_station_id, :name, :surname)
+    params.require(:ticket).permit(:train_id, :number, :start_station_id, :finish_station_id, :name, :surname, :user_id)
   end
 
   def set_ticket
