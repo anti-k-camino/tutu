@@ -1,5 +1,5 @@
 class CarriagesController < ApplicationController
-  before_action :set_train
+  before_action :set_train, except: [:show, :edit, :update, :destroy]  
   before_action :set_carriage, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -16,7 +16,7 @@ class CarriagesController < ApplicationController
 
   def update
     if @carriage.update(carriage_params)
-      redirect_to @train
+      redirect_to @carriage.train
     else
       render :edit
     end
@@ -33,6 +33,11 @@ class CarriagesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @carriage.destroy
+    redirect_to trains_path
   end
 
   protected
