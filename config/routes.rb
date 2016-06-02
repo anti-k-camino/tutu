@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   resources :trains do
     resources :carriages, shallow: true        
   end
-   
+  resources :coupe_carriages, controller: 'carriages'
+  resources :economy_carriages, controller: 'carriages'
+  resources :sv_carriages, controller: 'carriages'
+  resources :sitonly_carriages, controller: 'carriages'
  
   
 
