@@ -11,9 +11,7 @@ class Station < ActiveRecord::Base
   def update_position(route, position, arrival, departing)
     station_route = station_route(route)
     if station_route
-      station_route.update(position: position)
-      station_route.update(arrival: arrival)
-      station_route.update(departing: departing)
+      station_route.update(position: position, arrival: arrival, departing: departing )      
     end
   end
 
