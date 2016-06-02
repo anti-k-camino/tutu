@@ -8,20 +8,7 @@
         <p> Поезд номер : <%= train.number %>
           <%= link_to 'Купить билет', new_ticket_path(ticket: { train_id: train, start_station_id: params[:search][:start_id], finish_station_id: params[:search][:finish_id] } )%>
         </p>        
-          <ul>
-            <li> <%= @start.name %><br>
-              Прибывает в :
-             <%= @start.schedule_at(route, :arrival).to_s(:time) %>
-              Отправляется в :
-             <%= @start.schedule_at(route, :departing).to_s(:time) %>
-            </li> 
-            <li> <%= @finish.name %><br>
-              Прибывает в :
-             <%= @finish.schedule_at(route, :arrival).to_s(:time) %>
-              Отправляется в :
-             <%= @finish.schedule_at(route, :departing).to_s(:time) %>
-            </li>            
-          </ul>
+        <%= render 'schedule', start:@start, finish:@finish, route: route%>
         <%end%>
       <% else %>
         <h3>На маршруте нету поездов </h3>
