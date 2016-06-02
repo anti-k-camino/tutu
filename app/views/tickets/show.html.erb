@@ -1,12 +1,27 @@
 <p id="notice"><%= notice %></p>
 <p>
-  <strong>Название:</strong>
-  <%= @ticket.number %><br>
-  <strong>Start station</strong>
-  <%= @ticket.start_station.name %><br>
-  <strong>Finish station</strong>
+  <strong>Поезд :</strong>
+  <%= @ticket.train.number %><br>
+  <strong>Посадка :</strong>
+  <%= @ticket.start_station.name %>
+  <strong>Отправка:</strong>
+  <%= @ticket.departing.to_s(:time) %><br>
+  <strong>Высадка :</strong>
   <%= @ticket.finish_station.name%>
+  <strong>Прибытие :</strong>
+  <%= @ticket.arrival.to_s(:time) %><br>
+  <strong>Паспорт:</strong>
+  <%= @ticket.number %><br>
+  <strong>Имя:</strong>
+  <%= @ticket.name %><br>
+  <strong>Фамилия:</strong>
+  <%= @ticket.surname %><br>
+  
 </p>
+
+<table>
+
+</table>
 
 
 <%= link_to 'Редактировать', edit_ticket_path(@ticket) %> |

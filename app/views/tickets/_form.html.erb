@@ -1,12 +1,22 @@
 <%= form_for(@ticket) do |f| %>
   <%= render 'common/errors', resource: @ticket%>
-  <p>      
+  <p>
+    <%=  f.hidden_field :train_id, value: params[:ticket][:train_id] %>      
     <%=  f.hidden_field :start_station_id, value: params[:ticket][:start_station_id] %>
-    <%=  f.hidden_field :finish_station_id, value: params[:ticket][:finish_station_id]%>
+    <%=  f.hidden_field :finish_station_id, value: params[:ticket][:finish_station_id]%>    
   </p>
   <div class="field">
-    <%= f.label :number %><br>
+    <%= f.label :number, "Праспорт" %><br>
     <%= f.text_field :number %>
+  </div> 
+    </p>
+  <div class="field">
+    <%= f.label :name,"Имя" %><br>
+    <%= f.text_field :name %>
+  </div> 
+  <div class="field">
+    <%= f.label :surname,"Фамилия" %><br>
+    <%= f.text_field :surname %>
   </div> 
  
   <div class="actions">

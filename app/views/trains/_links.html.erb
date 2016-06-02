@@ -1,4 +1,4 @@
 <%= @train.counter(resource).count %><br>  
-<% @train.counter(resource).each do |car| %>
-    <%= link_to "Вагон номер #{car.number} ", [@train, car] %><br>
+<% @train.counter(resource).each do |car| %>    
+<%= link_to "Вагон номер #{car.number} ", [@train, car] %><br>
 <% end %>
