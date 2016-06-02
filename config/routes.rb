@@ -9,14 +9,15 @@ Rails.application.routes.draw do
     resources :coupe_carriages, controller: 'carriages'
     resources :economy_carriages, controller: 'carriages'
     resources :sv_carriages, controller: 'carriages'
-    resources :sitonly_carriages, controller: 'carriages'
+    resources :sitonly_carriages, controller: 'carriages'   
   end
+  
 
   resources :routes
   resources :tickets
   resources :users
   resource :search, only: [:new, :show]
-  
+
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

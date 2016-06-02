@@ -11,15 +11,15 @@
           <ul>
             <li> <%= route.station(params[:search][:start_id]).name %><br>
               Прибывает в :
-             <%= arrival = route.station(params[:search][:start_id]).schedule_at(route, :arrival).to_s(:time) %>
+             <%= @start.schedule_at(route, :arrival).to_s(:time) %>
               Отправляется в :
-             <%= route.station(params[:search][:start_id]).schedule_at(route, :departing).to_s(:time) %>
+             <%= @start.schedule_at(route, :departing).to_s(:time) %>
             </li> 
-            <li> <%= route.station(params[:search][:finish_id]).name %><br>
+            <li> <%= @finish.name %><br>
               Прибывает в :
-             <%= route.station(params[:search][:finish_id]).schedule_at(route, :arrival).to_s(:time) %>
+             <%= @finish.schedule_at(route, :arrival).to_s(:time) %>
               Отправляется в :
-             <%= route.station(params[:search][:finish_id]).schedule_at(route, :departing).to_s(:time) %>
+             <%= @finish.schedule_at(route, :departing).to_s(:time) %>
             </li>            
           </ul>
         <%end%>
