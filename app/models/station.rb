@@ -1,4 +1,4 @@
-class Station < ActiveRecord::Base 
+class Station < ActiveRecord::Base
   has_many :trains
   has_many :stations_routes
   has_many :routes, through: :stations_routes
@@ -8,10 +8,10 @@ class Station < ActiveRecord::Base
 
   scope :ordered, -> { joins(:stations_routes).order('stations_routes.position').uniq }
 
-  def update_position_schedule(route, position, arrival, departing)# is renamed but left in one
-    station_route = station_route(route)#method for the purpose of one query
+  def update_position_schedule(route, position, arrival, departing) # is renamed but left in one
+    station_route = station_route(route) # method for the purpose of one query
     if station_route
-      station_route.update(position: position, arrival: arrival, departing: departing )      
+      station_route.update(position: position, arrival: arrival, departing: departing)
     end
   end
 
@@ -19,10 +19,9 @@ class Station < ActiveRecord::Base
     station_route(route).try(:position)
   end
 
-  def schedule_at(route, type)    
-    station_route(route).try(type)    
+  def schedule_at(route, type)
+    station_route(route).try(type)
   end
-
 
   protected
 
