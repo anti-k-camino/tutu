@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<%= render 'common/errors', resource: @route%>
 
 <p>
   <strong>Название:</strong>
@@ -8,17 +9,43 @@
 <% if @route.stations.empty? %>
   <p>В маршруте нету станций</p>
 <% else %>
-  <p>B маршруте следующие станции : </p>
-  <ul>
-    <% @route.stations.each do |station|%>
-      <li><%= station.name %></li>
+<h2>Расписание :</h2>
+  <table>
+    <thead>
+      <tr>
+        <td width="100px">Название</td>        
+        <td>Позиция</td>        
+      </tr>
+    </thead>
+    <tbody>
+      <% @route.stations.ordered.each do |station|%>
+        <tr>
+          <td><%= station.name %></td>          
+          <td>
+            <%= form_tag update_station_attributes_station_path(station), method: :patch do %>              
+              <%= number_field_tag :position, station.position_in(@route) %>  
+              
+              <%= label :arrival, "Прибытие :" %>
+             <!-- <%= time_field_tag :arrival, station.schedule_at(@route, :arrival) %> -->
+              <!--<%= select_time( station.schedule_at(@route, :arrival), prefix: :arrival) %>-->
+              <%= time_field_tag :arrival, station.schedule_at(@route, :arrival) %>
+              
+              <%= label :departing, "Отправка :"%>
+              <%= time_field_tag :departing, station.schedule_at(@route, :departing) %>
+                                     
+              <%= hidden_field_tag :route_id, @route.id %>
+              <%= submit_tag "Изменить" %>
+            <% end %>
+          </td>        
+        </tr>
       <% end %>
-  </ul>
+    </tbody>
+  </table>
 <% end %>
 <% if @route.trains.empty? %>
-  <p>На маршруте нету поездов</p>
+  <h2>На маршруте нету поездов</h2>
 <% else %>
-  <p>На маршруте следующие поезда : </p>
+  <h2>На маршруте следующие поезда : </h2>
   <ul>
     <% @route.trains.each do |train|%>
       <li><%= train.number %></li>

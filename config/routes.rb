@@ -1,19 +1,21 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-  get 'carriages/coupe_form'
 
-  resources :stations
-  resources :trains
+  resources :stations do
+    patch :update_station_attributes, on: :member
+  end
+  resources :trains do
+    resources :carriages, shallow: true
+    resources :coupe_carriages, controller: 'carriages'
+    resources :economy_carriages, controller: 'carriages'
+    resources :sv_carriages, controller: 'carriages'
+    resources :sitonly_carriages, controller: 'carriages'
+  end
+
   resources :routes
   resources :tickets
   resources :users
-  resources :wagons
-  resources :stationsroute
-  resources :carriages
-  resources :coupe_carriage, controller: 'carriages', type: 'CoupeCarriage'
-  resources :economy_carriage, controller: 'carriages', type: 'EconomyCarriage'
-  resources :sv_carriage, controller: 'carriages', type: 'SvCarriage'
-  resources :sitonly_carriage, controller: 'carriages', type: 'SitonlyCarriage'
+  resource :search, only: [:new, :show]
 
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.

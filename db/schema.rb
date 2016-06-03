@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_160_525_112_701) do
+ActiveRecord::Schema.define(version: 20_160_602_064_924) do
   create_table 'carriages', force: :cascade do |t|
     t.integer  'number'
     t.integer  'top_seats'
@@ -38,9 +38,11 @@ ActiveRecord::Schema.define(version: 20_160_525_112_701) do
   end
 
   create_table 'stations_routes', force: :cascade do |t|
-    t.integer 'station_id'
-    t.integer 'route_id'
-    t.integer 'number', default: 0
+    t.integer  'station_id'
+    t.integer  'route_id'
+    t.integer  'position'
+    t.datetime 'departing'
+    t.datetime 'arrival'
   end
 
   create_table 'tickets', force: :cascade do |t|
@@ -51,6 +53,8 @@ ActiveRecord::Schema.define(version: 20_160_525_112_701) do
     t.integer  'user_id'
     t.integer  'start_station_id'
     t.integer  'finish_station_id'
+    t.string   'name'
+    t.string   'surname'
   end
 
   create_table 'trains', force: :cascade do |t|

@@ -15,5 +15,6 @@
   <%= render @carriage.type.underscore %>
 </p>
 <%= link_to 'Редактировать', edit_carriage_path(@carriage)%> | 
-<%= link_to 'Назад', carriages_path%><br>
+<%= link_to 'Удалить', carriage_path(@carriage), method: :delete, data: { confirm: 'Вы уверенны' } %><br>
+<%= link_to 'Назад', trains_path%><br>
 <%= link_to 'Главная', '/'%>

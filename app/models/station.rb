@@ -6,11 +6,26 @@ class Station < ActiveRecord::Base
   has_many :finish_tickets, class_name: 'Ticket', foreign_key: :finish_ticket_id
   validates :name, presence: true
 
-  def add_position(route, num)
-    stations_routes.update(route, number: num)
+  scope :ordered, -> { joins(:stations_routes).order('stations_routes.position').uniq }
+
+  def update_position_schedule(route, position, arrival, departing) # is renamed but left in one
+    station_route = station_route(route) # method for the purpose of one query
+    if station_route
+      station_route.update(position: position, arrival: arrival, departing: departing)
+    end
   end
 
-  def get_position(route)
-    stations_routes.where('route_id = ?', route).first.number
+  def position_in(route)
+    station_route(route).try(:position)
+  end
+
+  def schedule_at(route, type)
+    station_route(route).try(type)
+  end
+
+  protected
+
+  def station_route(route)
+    @station_route ||= stations_routes.where(route: route).first
   end
 end

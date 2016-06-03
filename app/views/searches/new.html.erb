@@ -1,0 +1,14 @@
+<h1>Поиск билетов </h1>
+<%= form_tag search_path, :method => 'get' do %>
+  <p>
+    <!--<%= text_field_tag :search_begin, params[:search_begin] %>-->
+   <%= collection_select(:search, :start_id, Station.all, :id, :name) %> 
+      <---->
+   <%= collection_select(:search, :finish_id, Station.all, :id, :name) %> 
+    <!--<%= text_field_tag :search_end, params[:search_end] %>    -->
+    
+    
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
