@@ -65,7 +65,7 @@ class Admin::StationsController < ApplicationController
 
   def update_station_attributes
     @station.update_position_schedule(@route, params[:position], params[:arrival], params[:departing])
-    redirect_to @route
+    redirect_to [:admin, @route]
   end
 
   private
