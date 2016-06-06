@@ -1,9 +1,5 @@
 <%= form_for(@route) do |f| %>  
-  <%= render 'common/errors', resource: @route %> 
-  <!--<div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>-->
+  <%= render 'common/errors', resource: @route %>  
   <div>
     <%= f.label :station_ids, 'Станции' %>
     <%= f.collection_select :station_ids, Station.all, :id, :name, {}, {multiple: true}%>   

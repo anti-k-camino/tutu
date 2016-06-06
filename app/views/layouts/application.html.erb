@@ -7,7 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <p id="notice" class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
+  <% if user_signed_in? %>
+    <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+    <p> Кабинет : <%= link_to " #{current_user.name} ", user_path(current_user) %></p>
+  <% else %>
+    <%= link_to 'Войти', new_user_session_path %>
+  <% end %>
 <%= yield %>
 <footer>
   (с) 2016 Антон Кратюк . Учебный проект в 
