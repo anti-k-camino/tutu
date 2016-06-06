@@ -2,7 +2,9 @@
 
 <p>
   <strong> Имя пользователя : </strong>
-  <%= @user.name %>
+  <%= @user.name %><br>
+  <strong> Email :</strong>
+  <%= @user.email %>
 </p>
 <p> Билеты у пользователя :</p>
 <% if @user.tickets.empty? %>
