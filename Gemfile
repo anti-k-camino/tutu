@@ -36,6 +36,10 @@ group :development, :test do
   gem 'byebug'
 end
 
+# gem 'right_aws', '~>2.0.0'
+#gem 'right_aws', :git => 'https://github.com/rightscale/right_aws.git'
+#gem 'right_http_connection', :git => 'https://github.com/rightscale/right_http_connection.git'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

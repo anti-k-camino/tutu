@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong> Номер : </strong>
+  <%= @train.number %>
+</p>
+<p>
+  <strong>На станции :</strong>
+  <% if @train.station.present? %>
+    <%= @train.station.name %>
+  <% else%>
+    Не указано
+  <% end %>
+</p>
+<p>
+  <strong> Маршрут :</strong>
+  <% if @train.route.present? %>
+    <%= @train.route.name %>
+  <% else%>
+    Не указано
+  <% end %>
+</p>
+<p>
+  <strong> Количество вагонов : </strong>
+  <%= @train.carriages.count %><br>
+  <strong>  купейных : </strong>  
+  <%= render 'links', resource: :CoupeCarriage %>
+  <strong> плацкартных  : </strong> 
+  <%= render 'links', resource: :EconomyCarriage %> 
+  <strong> св  : </strong> 
+  <%= render 'links', resource: :SvCarriage %>  
+  <strong> сидячих  : </strong> 
+  <%= render 'links', resource: :SitonlyCarriage %>   
+</p>
+
+<%= link_to 'Редактировать : ', edit_admin_train_path(@train) %> |
+<%= link_to 'Назад', admin_trains_path %><br>
+<%= link_to 'Главная', '/'%>
