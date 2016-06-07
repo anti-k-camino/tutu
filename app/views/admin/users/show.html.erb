@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong> Имя пользователя : </strong>
   <%= @user.name %><br>
@@ -12,13 +10,11 @@
 <% else %>
   <ul>
    <% @user.tickets.each do |ticket| %>
-    <li><%= link_to "#{ticket.number}", ticket_path(ticket) %></li>
+    <li><%= link_to "#{ticket.number}", [:admin, ticket] %></li>
    <% end %>
   </ul>
 <% end %>
 
-<h1>Билеты</h1>
-
-<%= link_to 'Редактировать', edit_user_path(@user) %> |
-<%= link_to 'Назад', users_path %><br>
+<%= link_to 'Редактировать', edit_admin_user_path(@user) %> |
+<%= link_to 'Назад', admin_users_path %><br>
 <%= link_to 'Главная', '/'%>

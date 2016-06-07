@@ -4,6 +4,8 @@
   <%= link_to 'Станции', admin_stations_path %><br>
   <%= link_to 'Поезда', admin_trains_path %><br> 
   <%= link_to 'Маршруты', admin_routes_path %><br>
-  <%= link_to 'Пользователи', users_path %>
-<%end%>
-<%= link_to 'Поиск', new_search_path %>
+  <%= link_to 'Пользователи', admin_users_path %><br>
+  <%= link_to 'Билеты', admin_tickets_path %><br>
+<%elsif current_user && !current_user.admin?%>
+  <%= link_to 'Поиск', new_search_path %>
+<% end %>

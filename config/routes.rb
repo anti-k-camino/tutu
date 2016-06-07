@@ -18,11 +18,12 @@ Rails.application.routes.draw do
     end    
 
     resources :routes
-    resources :tickets
+    resources :tickets, except: [:new, :create]
+    resources :users, except: [:new, :create]
   end
 
   
-  resources :tickets
+  resources :tickets, only: [:new, :create, :show, :destroy]
   resources :users
   resource :search, only: [:new, :show]
 

@@ -29,11 +29,9 @@ class Admin::StationsController < Admin::BaseController
 
     respond_to do |format|
       if @station.save
-        format.html { redirect_to @station, notice: 'Station was successfully created.' }
-        format.json { render :show, status: :created, location: @station }
+        format.html { redirect_to [:admin, @station], notice: 'Станция успешно создана.' }        
       else
-        format.html { render :new }
-        format.json { render json: @station.errors, status: :unprocessable_entity }
+        format.html { render :new }        
       end
     end
   end
@@ -43,11 +41,9 @@ class Admin::StationsController < Admin::BaseController
   def update
     respond_to do |format|
       if @station.update(station_params)
-        format.html { redirect_to @station, notice: 'Station was successfully updated.' }
-        format.json { render :show, status: :ok, location: @station }
+        format.html { redirect_to [:admin, @station], notice: 'Станция успешно изменена.' }        
       else
-        format.html { render :edit }
-        format.json { render json: @station.errors, status: :unprocessable_entity }
+        format.html { render :edit }        
       end
     end
   end
@@ -57,8 +53,7 @@ class Admin::StationsController < Admin::BaseController
   def destroy
     @station.destroy
     respond_to do |format|
-      format.html { redirect_to stations_url, notice: 'Station was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to admin_stations_url, notice: 'Станция успешно удалена.' }      
     end
   end
 

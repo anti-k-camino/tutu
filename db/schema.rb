@@ -41,10 +41,10 @@ ActiveRecord::Schema.define(version: 20160606103019) do
   create_table "stations_routes", force: :cascade do |t|
     t.integer  "station_id"
     t.integer  "route_id"
+    t.integer  "number",     default: 0
     t.integer  "position"
     t.datetime "departing"
     t.datetime "arrival"
-    t.integer  "number",     default: 0
   end
 
   create_table "tickets", force: :cascade do |t|
