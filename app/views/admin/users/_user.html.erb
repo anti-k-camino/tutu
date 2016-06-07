@@ -1,6 +1,10 @@
 <tr>
   <td><%= user.name %></td>
-  <td><%= link_to 'Показать', [:admin, user] %></td>
-  <td><%= link_to 'Редактировать', edit_admin_user_path(user) %></td>
-  <td><%= link_to 'Удалить', [:admin, user], method: :delete, data: { confirm: 'Вы уверенны?' } %></td>
+  <% if user.admin? %>
+    <td>ADMIN</td>
+  <% else%>
+    <td><%= link_to 'Показать', [:admin, user] %></td>
+    <td><%= link_to 'Редактировать', edit_admin_user_path(user) %></td>
+    <td><%= link_to 'Удалить', [:admin, user], method: :delete, data: { confirm: 'Вы уверенны?' } %></td>
+  <% end %>
 </tr>
