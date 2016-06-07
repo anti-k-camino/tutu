@@ -2,9 +2,9 @@
   
   <%= render 'common/errors', resource: @ticket%>
   <p>
-    <%=  f.text_field :train_id, value: @ticket.train.id %>      
-    <%=  f.text_field :start_station_id, value: @ticket.start_station.id %>
-    <%=  f.text_field :finish_station_id, value: @ticket.finish_station.id %>      
+    <%=  f.hidden_field :train_id, value: @ticket.train.id %>      
+    <%=  f.hidden_field :start_station_id, value: @ticket.start_station.id %>
+    <%=  f.hidden_field :finish_station_id, value: @ticket.finish_station.id %>      
   </p>
   <div class="field">
     <%= f.label :number, "Праспорт" %><br>

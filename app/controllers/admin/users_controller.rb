@@ -16,7 +16,7 @@ class Admin::UsersController < Admin::BaseController
     else
       render :edit
     end
-  end 
+  end
 
   def destroy
     @user.destroy

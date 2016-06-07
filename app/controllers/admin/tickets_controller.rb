@@ -1,4 +1,4 @@
-class Admin::TicketsController < Admin::BaseController 
+class Admin::TicketsController < Admin::BaseController
   before_action :set_ticket, except: [:index]
 
   def index
@@ -6,7 +6,7 @@ class Admin::TicketsController < Admin::BaseController
   end
 
   def show
-  end  
+  end
 
   def edit
   end
@@ -17,7 +17,7 @@ class Admin::TicketsController < Admin::BaseController
     else
       render :edit
     end
-  end 
+  end
 
   def destroy
     @ticket.destroy

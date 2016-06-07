@@ -1,4 +1,4 @@
-class Admin::StationsController < Admin::BaseController  
+class Admin::StationsController < Admin::BaseController
   before_action :set_station, only: [:show, :edit, :update, :destroy, :update_station_attributes]
   before_action :set_route, only: [:update_station_attributes]
 
@@ -29,9 +29,9 @@ class Admin::StationsController < Admin::BaseController
 
     respond_to do |format|
       if @station.save
-        format.html { redirect_to [:admin, @station], notice: 'Станция успешно создана.' }        
+        format.html { redirect_to [:admin, @station], notice: 'Станция успешно создана.' }
       else
-        format.html { render :new }        
+        format.html { render :new }
       end
     end
   end
@@ -41,9 +41,9 @@ class Admin::StationsController < Admin::BaseController
   def update
     respond_to do |format|
       if @station.update(station_params)
-        format.html { redirect_to [:admin, @station], notice: 'Станция успешно изменена.' }        
+        format.html { redirect_to [:admin, @station], notice: 'Станция успешно изменена.' }
       else
-        format.html { render :edit }        
+        format.html { render :edit }
       end
     end
   end
@@ -53,7 +53,7 @@ class Admin::StationsController < Admin::BaseController
   def destroy
     @station.destroy
     respond_to do |format|
-      format.html { redirect_to admin_stations_url, notice: 'Станция успешно удалена.' }      
+      format.html { redirect_to admin_stations_url, notice: 'Станция успешно удалена.' }
     end
   end
 

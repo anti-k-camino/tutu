@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, controllers: { registrations: 'registrations' }
   get 'welcome/index'
-  
-
 
   namespace :admin do
     resources :stations do
@@ -14,15 +12,14 @@ Rails.application.routes.draw do
       resources :coupe_carriages, controller: 'carriages'
       resources :economy_carriages, controller: 'carriages'
       resources :sv_carriages, controller: 'carriages'
-      resources :sitonly_carriages, controller: 'carriages'      
-    end    
+      resources :sitonly_carriages, controller: 'carriages'
+    end
 
     resources :routes
     resources :tickets, except: [:new, :create]
     resources :users, except: [:new, :create]
   end
 
-  
   resources :tickets, only: [:new, :create, :show, :destroy]
   resources :users
   resource :search, only: [:new, :show]
