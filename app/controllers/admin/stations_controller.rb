@@ -1,5 +1,4 @@
-class Admin::StationsController < ApplicationController
-  before_action :authenticate_user!
+class Admin::StationsController < Admin::BaseController  
   before_action :set_station, only: [:show, :edit, :update, :destroy, :update_station_attributes]
   before_action :set_route, only: [:update_station_attributes]
 

@@ -1,5 +1,4 @@
-class Admin::RoutesController < ApplicationController
-  before_action :authenticate_user!
+class Admin::RoutesController < Admin::BaseController  
   before_action :set_route, only: [:show, :edit, :update, :destroy]
 
   def index

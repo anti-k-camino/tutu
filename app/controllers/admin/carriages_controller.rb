@@ -1,4 +1,4 @@
-class Admin::CarriagesController < ApplicationController
+class Admin::CarriagesController < Admin::BaseController
   before_action :set_train, except: [:show, :edit, :update, :destroy]
   before_action :set_carriage, only: [:show, :edit, :update, :destroy]
 
