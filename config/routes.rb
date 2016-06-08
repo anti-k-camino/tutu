@@ -20,8 +20,8 @@ Rails.application.routes.draw do
     resources :users, except: [:new, :create]
   end
 
-  resources :tickets, only: [:new, :create, :show, :destroy]
   resources :users
+  resources :tickets, only: [:new, :create, :show, :destroy]
   resource :search, only: [:new, :show]
 
   root 'welcome#index'

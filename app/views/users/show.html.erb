@@ -11,7 +11,7 @@
   <p>У пользователя нету билетов</p>
 <% else %>
   <ul>
-   <% @user.tickets.each do |ticket| %>
+   <% @user.tickets.each do |ticket| %>   
     <li><%= link_to "#{ticket.number}", ticket_path(ticket) %></li>
    <% end %>
   </ul>

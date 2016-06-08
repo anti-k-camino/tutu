@@ -1,5 +1,6 @@
 class TicketsController < ApplicationController
   before_action :authenticate_user!
+  #before_action :set_user
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
   
   def show
@@ -7,17 +8,6 @@ class TicketsController < ApplicationController
 
   def new
     @ticket = Ticket.new
-  end
-
-  def edit
-  end
-
-  def update
-    if @ticket.update(ticket_params)
-      redirect_to @ticket
-    else
-      render :edit
-    end
   end
 
   def create
@@ -32,10 +22,10 @@ class TicketsController < ApplicationController
 
   def destroy
     @ticket.destroy
-    redirect_to tickets_path
+    redirect_to current_user
   end
 
-  private
+  private  
 
   def ticket_params
     params.require(:ticket).permit(:train_id, :number, :start_station_id, :finish_station_id, :name, :surname, :user_id)

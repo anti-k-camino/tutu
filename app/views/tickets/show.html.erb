@@ -33,5 +33,5 @@
 
 
 
-<%= link_to 'Назад', tickets_path %> |
+<%= link_to 'Удалить', @ticket, method: :delete, data: { confirm: 'Вы что, выпили?' } %><br>
 <%= link_to 'Главная', '/'%>
