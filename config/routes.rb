@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   resources :users
-  resources :tickets, only: [:new, :create, :show, :destroy]
+  resources :tickets, only: [:index, :new, :create, :show, :destroy]
   resource :search, only: [:new, :show]
 
   root 'welcome#index'

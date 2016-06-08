@@ -1,7 +1,10 @@
 class TicketsController < ApplicationController
-  before_action :authenticate_user!
-  # before_action :set_user
+  before_action :authenticate_user!  
   before_action :set_ticket, only: [:show, :destroy]
+
+  def index
+    @tickets = current_user.tickets
+  end
 
   def show
   end
@@ -22,7 +25,7 @@ class TicketsController < ApplicationController
 
   def destroy
     @ticket.destroy
-    redirect_to current_user
+    redirect_to tickets_path
   end
 
   private
