@@ -1,8 +1,11 @@
 <h1>Welcome to my railway</h1>
 <p>by Antonio Montana</p>
-<%= link_to 'Станции', stations_path %><br>
-<%= link_to 'Поезда', trains_path %><br>
-<%= link_to 'Маршруты', routes_path %><br>
-<%= link_to 'Билеты', tickets_path %><br>
-<%= link_to 'Пользователи', users_path %><br>
-<%= link_to 'Поиск', new_search_path %>
+<% if current_user && current_user.admin?%>
+  <%= link_to 'Станции', admin_stations_path %><br>
+  <%= link_to 'Поезда', admin_trains_path %><br> 
+  <%= link_to 'Маршруты', admin_routes_path %><br>
+  <%= link_to 'Пользователи', admin_users_path %><br>
+  <%= link_to 'Билеты', admin_tickets_path %><br>
+<%elsif current_user && !current_user.admin?%>
+  <%= link_to 'Поиск', new_search_path %>
+<% end %>

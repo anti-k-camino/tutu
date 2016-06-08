@@ -1,22 +1,20 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong> Имя пользователя : </strong>
-  <%= @user.name %>
+  <%= @user.name %><br>
+  <strong> Email :</strong>
+  <%= @user.email %>
 </p>
-<p> Билеты у пользователя :</p>
+<!--<p> Билеты у пользователя :</p>
 <% if @user.tickets.empty? %>
   <p>У пользователя нету билетов</p>
 <% else %>
   <ul>
-   <% @user.tickets.each do |ticket| %>
-    <li><%= ticket.number %></li>
+   <% @user.tickets.each do |ticket| %>   
+    <li><%= link_to "#{ticket.number}", ticket_path(ticket) %></li>
    <% end %>
   </ul>
-<% end %>
+<% end %>-->
+<%=link_to 'Билеты', tickets_path %><br>
 
-<h1>Билеты</h1>
-
-<%= link_to 'Редактировать', edit_user_path(@user) %> |
-<%= link_to 'Назад', users_path %><br>
+<%= link_to 'Редактировать', edit_user_registration_path(@user) %> |
 <%= link_to 'Главная', '/'%>

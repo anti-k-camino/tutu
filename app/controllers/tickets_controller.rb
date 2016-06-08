@@ -1,8 +1,9 @@
 class TicketsController < ApplicationController
-  before_action :set_ticket, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_ticket, only: [:show, :destroy]
 
   def index
-    @tickets = Ticket.all
+    @tickets = current_user.tickets
   end
 
   def show
@@ -12,19 +13,8 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new
   end
 
-  def edit
-  end
-
-  def update
-    if @ticket.update(ticket_params)
-      redirect_to @ticket
-    else
-      render :edit
-    end
-  end
-
   def create
-    @ticket = Ticket.new(ticket_params)
+    @ticket = current_user.tickets.new(ticket_params)
 
     if @ticket.save
       redirect_to @ticket

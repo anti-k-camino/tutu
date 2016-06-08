@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<h1>Список вагонов</h1>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @carriages.each do |carriage|%>
+    <tr>
+      <td><%= carriage.type %></td>
+      <td><%= link_to 'Показать', admin_carriage_path(carriage) %></td>
+      <td><%= link_to 'Редактировать', edit_admin_carriage_path(carriage) %></td>      
+    </tr>
+   <% end %>
+  </tbody>
+</table>
+<%= link_to 'Создать новый вагон', new_admin_train_carriage_path(@train) %>
+<%= link_to 'Главная', '/'%>
