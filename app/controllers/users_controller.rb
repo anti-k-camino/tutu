@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-  end  
+  end
 
   def edit
   end
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       render :new
     end
   end
- 
+
   private
 
   def user_params
