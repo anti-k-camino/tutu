@@ -15,6 +15,16 @@ ru:
     arrival: 'Прибытие'
     diparture: 'Отправка'
     nothing_found: 'Ничего не найдено'
+    nothing_mentioned: 'Не указано'
+    add_carriage: 'Добавить вагон'    
+  welcome:
+    index:
+      title: 'Покупайте билеты с нами TUTU'
+      stations: 'Cтанции'
+      trains: 'Поезда'
+      routes: 'Маршруты'
+      users: 'Пользователи'
+      tickets: 'Билеты'
   searches:
     new:
       ticket_search: 'Поиск билетов'
@@ -52,13 +62,26 @@ ru:
       edit:
         title: 'Редактирование станции'  
     trains:
+      form:
+        submit: '%{action} поезд'        
       new:
         title: 'Новый поезд'
       edit:
         title: 'Изменить поезд'
-      show:
-        add_carriage: 'Добавить вагон' 
+      show:          
         number: 'Номер'
+        station: 'Поезд на станции : '
+        route: 'Поезд на маршруте : '
+        carriages_quantity: 'Количество вагонов'
+        coupe: 'купейных : '
+        economy: 'плацкартных : '
+        sv: 'св : '
+        sit: 'сидячих : '
+      links:        
+        carriage_name: 'Вагон'        
+      index:
+        new_train: 'Создать новый поезд'
+        title: 'Cписок поездов'
     routes:
       index:
         title: 'Список маршрутов'

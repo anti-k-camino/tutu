@@ -3,7 +3,7 @@ class Train < ActiveRecord::Base
   belongs_to :route
   has_many :tickets
   has_many :carriages, dependent: :destroy
-  validates :number, presence: true
+  validates :number, presence: true, uniqueness: true
 
   def carriage_order
     head ? carriages.order(:number) : carriages.order('number DESC')
