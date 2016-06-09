@@ -1,7 +1,7 @@
-<p> Билеты у пользователя :</p>
 <% if @tickets.empty? %>
-  <p>У пользователя нету билетов</p>
+  <p><%= t('.no_tickets')%></p>
 <% else %>
+  <p> <%= t('.user_tickets')%></p>
   <ul>
    <% @tickets.each do |ticket| %>   
     <li><%= link_to "#{ticket.number}", ticket_path(ticket) %></li>

@@ -1,5 +1,5 @@
 <p>
-  <strong> Имя пользователя : </strong>
+  <strong> <%= t('.name') %></strong>
   <%= @user.name %><br>
   <strong> Email :</strong>
   <%= @user.email %>
@@ -14,7 +14,7 @@
    <% end %>
   </ul>
 <% end %>-->
-<%=link_to 'Билеты', tickets_path %><br>
+<%=link_to t('.tickets'), tickets_path %><br>
 
-<%= link_to 'Редактировать', edit_user_registration_path(@user) %> |
-<%= link_to 'Главная', '/'%>
+<%= link_to t('common.main'), root_path %> |
+<%= link_to t('common.edit'), edit_user_registration_path(@user) %> 

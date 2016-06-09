@@ -17,7 +17,11 @@ ru:
         side_bottom_seats: 'Боковая нижняя полка'
         sitonly_seats: 'Сидячие места'        
       station:
-        name: 'Название'     
+        name: 'Название' 
+      user:
+        name: 'Имя' 
+        password: 'Пароль'
+        email: 'Электронная почта'   
       train:
         number: 'Номер'
         station: 'Станция'
@@ -36,6 +40,12 @@ ru:
           attributes:
             name:
               blank: 'станции не может быть пустым'
+        user:
+          attributes:
+            name:
+              blank: ', это поле пользователя не может быть пустым'
+            email:
+              blank: ', это поле пользователя не может быть пустым'
         train:
           attributes:
             number:

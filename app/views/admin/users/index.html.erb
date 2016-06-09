@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Список пользователей</h1>
+<h1><%= t('.title')%></h1>
 
 <table>
   <thead>
@@ -16,4 +16,4 @@
 </table>
 
 <br>
-<%= link_to 'Главная', '/'%>
+<%= link_to t('common.main'), root_path %>

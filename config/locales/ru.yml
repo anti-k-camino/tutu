@@ -6,11 +6,19 @@ ru:
     edit: 'Редактировать'
     admin: 'Админ'    
     delete: 'Удалить'
-    confirn: 'Вы уверенны ?'
+    confirm: 'Вы уверенны ?'
     name: 'Имя'
     number: 'Номер'
     create: 'Создать' 
-    selfname: 'Название'       
+    selfname: 'Название'
+  users:
+    show:
+      name: 'Ваше имя'
+      tickets: 'Ваши билеты'
+  tickets:
+    index:
+      user_tickets: 'Купленные вами билеты'
+      no_tickets: 'Вы пока не преобрели никаких билетов'      
   admin:
     carriages:
       new:
@@ -55,4 +63,7 @@ ru:
       edit:
         title: 'Изменить маршрут' 
       form:
-        submit: '%{action} маршрут'    
+        submit: '%{action} маршрут' 
+    users:
+      index:
+        title: 'Список пользователей'   
