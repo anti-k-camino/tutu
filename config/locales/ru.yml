@@ -11,6 +11,18 @@ ru:
     number: 'Номер'
     create: 'Создать' 
     selfname: 'Название'
+    search: 'Поиск'
+    arrival: 'Прибытие'
+    diparture: 'Отправка'
+    nothing_found: 'Ничего не найдено'
+  searches:
+    new:
+      ticket_search: 'Поиск билетов'
+    show:
+      new_search: 'Новый поиск'
+      title: 'Возможные варианты'
+      buy_ticket: 'Купить билет'
+      arr: 'Прибывает в : '
   users:
     show:
       name: 'Ваше имя'
@@ -18,7 +30,8 @@ ru:
   tickets:
     index:
       user_tickets: 'Купленные вами билеты'
-      no_tickets: 'Вы пока не преобрели никаких билетов'      
+      no_tickets: 'Вы пока не преобрели никаких билетов' 
+      profile: 'Профиль'     
   admin:
     carriages:
       new:

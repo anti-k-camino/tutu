@@ -1,14 +1,14 @@
 <ul>
   <li> <%= start.name %><br>
-    Прибывает в :
+    <%= t('common.arrival') %>
     <%= start.schedule_at(route, :arrival).to_s(:time) %>
-    Отправляется в :
+    <%= t('common.diparture') %>
     <%= start.schedule_at(route, :departing).to_s(:time) %>
   </li> 
   <li> <%= finish.name %><br>
-    Прибывает в :
+    <%= t('common.arrival') %>
     <%= finish.schedule_at(route, :arrival).to_s(:time) %>
-    Отправляется в :
+    <%= t('common.diparture') %>
     <%= finish.schedule_at(route, :departing).to_s(:time) %>
   </li>            
 </ul>
