@@ -1,20 +1,19 @@
 <p id="notice"><%= notice %></p>
 <%= render 'common/errors', resource: @route%>
-
 <p>
-  <strong>Название:</strong>
+  <strong><%= t('common.selfname')%></strong>
   <%= @route.name %>
 </p>
 
 <% if @route.stations.empty? %>
-  <p>В маршруте нету станций</p>
+  <p><%= t('.no_stations')%></p>
 <% else %>
-<h2>Расписание :</h2>
+<h2><%= t('.order')%></h2>
   <table>
     <thead>
       <tr>
-        <td width="100px">Название</td>        
-        <td>Позиция</td>        
+        <td width="100px"><%= t('common.selfname')%></td>        
+        <td><%= t('.position')%></td>        
       </tr>
     </thead>
     <tbody>
@@ -34,7 +33,7 @@
               <%= time_field_tag :departing, station.schedule_at(@route, :departing) %>
                                      
               <%= hidden_field_tag :route_id, @route.id %>
-              <%= submit_tag "Изменить" %>
+              <%= submit_tag t('common.edit') %>
             <% end %>
           </td>        
         </tr>

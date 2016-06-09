@@ -30,6 +30,7 @@ ru:
     errors:
       messages:
         blank: 'не может быть пустым'
+        two_names: 'Должно быть минимум две станции'
       models:
         station:
           attributes:
