@@ -17,7 +17,7 @@ ru:
         side_bottom_seats: 'Боковая нижняя полка'
         sitonly_seats: 'Сидячие места'        
       station:
-        name: 'Название'
+        name: 'Название'     
       train:
         number: 'Номер'
         station: 'Станция'

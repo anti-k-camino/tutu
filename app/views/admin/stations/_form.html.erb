@@ -5,6 +5,6 @@
     <%= f.text_field :name %>
   </div>
   <div class="actions">
-    <%= f.submit t('.submit') %>
+    <%= f.submit t('.submit', action: @station.new_record? ? t('common.create') : t('common.edit')) %>
   </div>
 <% end %>

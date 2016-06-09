@@ -19,14 +19,17 @@ ru:
         submit: 'вагон'  
     stations:
       form:
-        submit: 'Станция'
+        submit: '%{action} станцию'
       new:
         title: 'Новая станция'
         link: 'Создать станцию'
-      all:
+      index:
         title: 'Cписок всех станций'
         no_route: 'Станция ни в одном маршруте'
-        routes: 'Станция в таких маршрутах'    
+        routes: 'Станция в таких маршрутах'
+        new: 'Создать станцию'       
+      edit:
+        title: 'Редактирование станции'  
     trains:
       new:
         title: 'Новый поезд'
@@ -43,8 +46,12 @@ ru:
         title: 'Новый маршрут'
       show:
         no_stations: 'В маршруте нету станций'
+        no_trains: 'На маршруте нет поездов'
+        route_trains: 'На маршруте следующие поезда'
         order: 'Pасписание'
-        position: 'Позиция'
+        position: 'Позиция'        
+        arrival: 'Прибытие  :'
+        departing: 'Отправка :'
       edit:
         title: 'Изменить маршрут' 
       form:

@@ -24,12 +24,12 @@
             <%= form_tag update_station_attributes_admin_station_path(station), method: :patch do %>              
               <%= number_field_tag :position, station.position_in(@route) %>  
               
-              <%= label :arrival, "Прибытие :" %>
+              <%= label :arrival, t('.arrival') %>
              <!-- <%= time_field_tag :arrival, station.schedule_at(@route, :arrival) %> -->
               <!--<%= select_time( station.schedule_at(@route, :arrival), prefix: :arrival) %>-->
               <%= time_field_tag :arrival, station.schedule_at(@route, :arrival) %>
               
-              <%= label :departing, "Отправка :"%>
+              <%= label :departing, t('.departing')%>
               <%= time_field_tag :departing, station.schedule_at(@route, :departing) %>
                                      
               <%= hidden_field_tag :route_id, @route.id %>
@@ -42,9 +42,9 @@
   </table>
 <% end %>
 <% if @route.trains.empty? %>
-  <h2>На маршруте нету поездов</h2>
+  <h2><%= t('.no_trains')%></h2>
 <% else %>
-  <h2>На маршруте следующие поезда : </h2>
+  <h2><%= t('.route_trains')%></h2>
   <ul>
     <% @route.trains.each do |train|%>
       <li><%= train.number %></li>
@@ -52,6 +52,6 @@
   </ul>
 <% end %>
 
-<%= link_to 'Редактировать', edit_admin_route_path(@route) %> |
-<%= link_to 'Назад', admin_routes_path %><br>
-<%= link_to 'Главная', '/'%>
+<%= link_to t('common.edit'), edit_admin_route_path(@route) %> |
+<%= link_to t('common.back'), admin_routes_path %><br>
+<%= link_to t('common.main'), root_path %>

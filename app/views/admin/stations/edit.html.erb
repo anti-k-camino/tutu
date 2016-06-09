@@ -1,6 +1,7 @@
-<h1>Редактирование станций</h1>
+<h1><%= t('.title')%></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Показать', [:admin, @station]%> |
-<%= link_to 'Назад', admin_stations_path %>
+<%= link_to t('common.main'), root_path %> |
+<%= link_to t('common.back'), admin_stations_path %>
+
