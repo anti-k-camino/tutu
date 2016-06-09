@@ -1,7 +1,7 @@
 <%= form_for([:admin, @route]) do |f| %>  
   <%= render 'common/errors', resource: @route %>  
   <div>
-    <%= f.label :station_ids, 'Станции' %>
+    <%= f.label :station_ids %>
     <%= f.collection_select :station_ids, Station.all, :id, :name, {}, {multiple: true}%>   
   </div>
   <div class="actions">

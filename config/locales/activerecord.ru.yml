@@ -1,0 +1,61 @@
+ru:
+  activerecord:
+    models:
+      station: 'Станция'
+      train: 'Поезд'
+      carriage: 'Вагон'
+      user: 'Пользователь'
+      ticket: 'Билет'
+      route: 'Mapшрут'
+    attributes:
+      carriage:
+        number: 'Номер'
+        type: 'Тип'
+        top_seats: 'Верхняя полка'
+        bottom_seats: 'Нижняя полка' 
+        side_top_seats: 'Боковая верхняя полка' 
+        side_bottom_seats: 'Боковая нижняя полка'
+        sitonly_seats: 'Сидячие места'        
+      station:
+        name: 'Название'
+      train:
+        number: 'Номер'
+        station: 'Станция'
+        route: 'Маршрут'
+      route:
+        name: 'Название'
+      route:          
+        name: 'Имя'
+        station_ids: 'Станции'  
+    errors:
+      messages:
+        blank: 'не может быть пустым'
+      models:
+        station:
+          attributes:
+            name:
+              blank: 'станции не может быть пустым'
+        train:
+          attributes:
+            number:
+              blank: 'поезда не может быть пустым'           
+        carriage:
+          attributes:
+            number:
+              blank: 'вагона не может быть пустым'              
+            top_seats:
+              blank: 'количество должно быть указано'
+              inclusion: 'количество должно быть указанно от 0 до 100'
+            bottom_seats:
+              blank: 'количество должно быть указано'
+              inclusion: 'количество должно быть указанно от 0 до 100'
+            side_top_seats:
+              blank: 'количество должно быть указано'
+              inclusion: 'количество должно быть указанно от 0 до 100'
+            side_bottom_seats:
+              blank: 'количество должно быть указано'
+              inclusion: 'количество должно быть указанно от 0 до 100'
+            sitonly_seats:
+              blank: 'количество должно быть указано'
+              inclusion: 'количество должно быть указанно от 0 до 100'
+        

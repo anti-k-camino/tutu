@@ -1,4 +1,4 @@
-<h1>Новый вагон</h1>
+<h1><%= t('.title')%></h1>
 <%= render 'form' %>
-<%= link_to 'Назад', admin_train_path(params["train_id"])%>
-<%= link_to 'Главная', '/'%>
+<%= link_to t('common.back'), admin_train_path(params["train_id"])%>
+<%= link_to t('common.main'), root_path %>

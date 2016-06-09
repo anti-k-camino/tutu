@@ -1,2 +1,39 @@
 ru:
-  hello: "Привет"
+  common:
+    back: 'Haзад'
+    main: 'Главная'
+    edit: 'Редактировать'
+    admin: 'Админ'    
+    delete: 'Удалить'
+    confirn: 'Вы уверенны ?'
+    name: 'Имя'
+    number: 'Номер'
+    create: 'Создать'        
+  admin:
+    carriages:
+      new:
+        title: 'Новый вагон'
+      form:
+        submit: 'вагон'  
+    stations:
+      form:
+        submit: 'Станция'
+      new:
+        title: 'Новая станция'
+        link: 'Создать станцию'
+      all:
+        title: 'Cписок всех станций'
+        no_route: 'Станция ни в одном маршруте'
+        routes: 'Станция в таких маршрутах'    
+    trains:
+      new:
+        title: 'Новый поезд'
+      edit:
+        title: 'Изменить поезд'
+      show:
+        add_carriage: 'Добавить вагон' 
+        number: 'Номер'
+    routes:
+      new:
+        title: 'Новый маршрут' 
+            

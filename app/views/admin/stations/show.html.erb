@@ -1,11 +1,11 @@
 <p>
-  <strong>Имя:</strong>
+  <strong><%= t('common.name')%></strong>
   <%= @station.name %>
 </p>
 <%if @station.routes.empty?%>
-  <p>Эта станция ни водном маршруте</p>
+  <p><%= t('stations.all.no_route')%></p>
 <% else %>
-  <p>Станция в таких маршрутах :</p>  
+  <p><%= t('stations.all.routes')%></p>  
   <ul>
     <% @station.routes.each do |route|%>
       <li><%= route.name %></li>
@@ -13,6 +13,6 @@
   </ul>
 <% end %>
 
-<%= link_to 'Редактировать', edit_admin_station_path(@station) %> |
-<%= link_to 'Назад', admin_stations_path %><br>
-<%= link_to 'Главная', '/'%>
+<%= link_to t('common.edit'), edit_admin_station_path(@station) %> |
+<%= link_to t('common.back'), admin_stations_path %><br>
+<%= link_to t('common.main'), root_path %>

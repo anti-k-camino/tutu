@@ -1,4 +1,4 @@
-<h1>Редактировать поезд</h1>
+<h1><%= t('trains.edit.title') %></h1>
 <%= render 'form'%>
-<%= link_to 'Назад', admin_trains_path %>
-<%= link_to 'Главная', '/' %>
+<%= link_to t('common.back'), admin_trains_path %>
+<%= link_to t('common.main'), root_path %>
