@@ -13,9 +13,12 @@ ru:
     selfname: 'Название'
     search: 'Поиск'
     arrival: 'Прибытие'
+    enter: 'Войти'
+    exit: 'Выйти'
     diparture: 'Отправка'
     nothing_found: 'Ничего не найдено'
     nothing_mentioned: 'Не указано'
+    error: 'Обнаружены ошибки'
     add_carriage: 'Добавить вагон'    
   welcome:
     index:
@@ -44,10 +47,24 @@ ru:
       profile: 'Профиль'     
   admin:
     carriages:
+      form:
+        submit: '%{action} вагон'
       new:
         title: 'Новый вагон'
-      form:
-        submit: 'вагон'  
+      show:
+        train_number: 'Номер поезда :' 
+        type: 'Тип вагона :'
+        carriage_number: 'Номер вагона :' 
+      edit:
+        title: 'Изменить вагон'
+      coupe_carriage:
+        top_seats: 'Верхних полок :'
+        bottom_seats : 'Нижних полок :'
+      economy_carriage:
+        side_top_seats: 'Боковых верхних полок :'
+        side_bottom_seats: 'Боковых нижних полок :'
+      sitonly_carriage:
+        sitonly_seats: 'Сидячих мест :'
     stations:
       form:
         submit: '%{action} станцию'

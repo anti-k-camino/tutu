@@ -28,7 +28,7 @@
   <%= f.label :sitonly_seats %>     
   <%= f.number_field :sitonly_seats %>
 </div> 
-<div class="actions">
-  <%= f.submit I18n.t('.submit')  %>
+<div class="actions">   
+  <%= f.submit t('.submit', action: @carriage.new_record? ? t('common.create') : t('common.edit')) %>
 </div>
 <% end %>
