@@ -1,3 +1,4 @@
+
 <h1><%= t('.title') %></h1>
 <% if @routes.count > 0 %>
   <% @routes.each do |route|%>
@@ -6,7 +7,7 @@
       <% if route.trains.count > 0 %>
         <% route.trains.each do |train|%>
         <p> Поезд номер : <%= train.number %>
-          <%= link_to t('.buy_ticket'), new_ticket_path(ticket: { train_id: train, start_station_id: params[:search][:start_id], finish_station_id: params[:search][:finish_id]} )%>
+          <%= link_to t('.buy_ticket'), new_ticket_path(ticket: { train_id: train, start_station_id: params[:start_station], finish_station_id: params[:finish_station]} )%>
         </p>        
         <%= render 'schedule', start:@start, finish:@finish, route: route %>
         <%end%>
@@ -19,6 +20,6 @@
   <h3><%= t('common.nothing_found')%></h3>
 <% end %>
 
-<%= link_to t('common.main'), root_path %>т |
+<%= link_to t('common.main'), root_path %> |
 <%= link_to t('.new_search'), new_search_path %> 
 
