@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 <h1>Билет</h1>
-<table>
+<table class="table">
   <thead>
-   <tr>
-    <td width=100px>Маршрут</td>
+   <tr>    
     <td>Поезд </td>
     <td>Посадка </td>
     <td>Отправка </td>
@@ -16,16 +15,16 @@
    </tr>
   </thead>
   <tbody>
-  <tr>
-   
-   <td><%= @ticket.start_station.name %></td>
-   <td><%= @ticket.departing.to_s(:time) %><br></td>
-   <td><%= @ticket.finish_station.name%></td>
-   <td><%= @ticket.arrival.to_s(:time) %><br></td>
-   <td><%= @ticket.number %></td>
-   <td><%= @ticket.name %></td>
-   <td><%= @ticket.surname %></td>  
-   <td><%= @ticket.user.name %></td>
+  <tr>    
+    <td><%= @ticket.train.number %></td>
+    <td><%= @ticket.start_station.name %></td>
+    <td><%= @ticket.departing.to_s(:time) %><br></td>
+    <td><%= @ticket.finish_station.name%></td>
+    <td><%= @ticket.arrival.to_s(:time) %><br></td>
+    <td><%= @ticket.number %></td>
+    <td><%= @ticket.name %></td>
+    <td><%= @ticket.surname %></td>  
+    <td><%= @ticket.user.name %></td>
   </tr>
   </tbody>
 </table>
