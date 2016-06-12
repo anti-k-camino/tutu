@@ -2,7 +2,7 @@
 
 <h1><%= t('.title')%></h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th><%= t('common.selfname')%></th>
@@ -14,8 +14,7 @@
    <%= render @routes %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to t('.new_route'), new_admin_route_path %><br>
-<%= link_to t('common.main'), root_path%>
+<div class='btn-group'>
+  <%= link_to t('common.main'), toolbar_admin_user_path(current_user), class:'btn'%>
+  <%= link_to t('.new_route'), new_admin_route_path, class:'btn' %>
+</div>

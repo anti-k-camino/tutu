@@ -58,12 +58,16 @@ body{
   color:white;
   background-color: #5e82a6;  
   padding: 20px;
-
 }
- .carousel-inner img {        
+.signin{
+   font-size:15px;
+   padding-top:100px;
+}
+.carousel-inner img {        
     width: 50%;
     margin: auto;   
 }
+
 
 .carousel-caption h3 {
     color: #fff !important;

@@ -33,7 +33,7 @@
               <%= time_field_tag :departing, station.schedule_at(@route, :departing) %>
                                      
               <%= hidden_field_tag :route_id, @route.id %>
-              <%= submit_tag t('common.edit') %>
+              <%= submit_tag t('common.edit'), class:'btn btn-warning' %>
             <% end %>
           </td>        
         </tr>
@@ -45,13 +45,15 @@
   <h2><%= t('.no_trains')%></h2>
 <% else %>
   <h2><%= t('.route_trains')%></h2>
-  <ul>
+  <ul class='list-group'>
     <% @route.trains.each do |train|%>
-      <li><%= train.number %></li>
+      <li class='list-group-item'><%= train.number %></li>
       <% end %>
   </ul>
 <% end %>
 
-<%= link_to t('common.edit'), edit_admin_route_path(@route) %> |
-<%= link_to t('common.back'), admin_routes_path %><br>
-<%= link_to t('common.main'), root_path %>
+<div class='btn-group'>
+  <%= link_to t('common.main'), toolbar_admin_user_path(current_user), class:'btn' %>
+  <%= link_to t('common.back'), admin_routes_path, class:'btn' %>
+  <%= link_to t('common.edit'), edit_admin_route_path(@route), class:'btn' %>
+</div>
