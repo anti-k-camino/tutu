@@ -25,12 +25,14 @@ ru:
       train:
         number: 'Номер'
         station: 'Станция'
-        route: 'Маршрут'
-      route:
-        name: 'Название'
+        route: 'Маршрут'      
       route:          
-        name: 'Имя'
-        station_ids: 'Станции'  
+        name: 'Название'
+        station_ids: 'Станции'
+      ticket:
+        surname: 'Фамилия'
+        name: 'Имя' 
+        number: 'Паспорт' 
     errors:
       messages:
         blank: 'не может быть пустым'
