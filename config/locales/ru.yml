@@ -19,7 +19,7 @@ ru:
     nothing_found: 'Ничего не найдено'
     nothing_mentioned: 'Не указано'
     error: 'Обнаружены ошибки'
-    add_carriage: 'Добавить вагон'    
+    add_carriage: 'Добавить вагон'
   welcome:
     index:
       title: 'Покупайте билеты с нами TUTU'

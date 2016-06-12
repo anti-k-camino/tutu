@@ -1,7 +1,48 @@
-<% if current_user && current_user.admin?%>
-  <%= link_to 'Toolbar', toolbar_admin_user_path(current_user)%>
-<%elsif current_user && !current_user.admin?%>
   <h1><%= t('.title') %></h1>
   <p>by Antonio Montana</p>
-  <%= link_to t('common.search'), new_search_path %>
-<% end %>
+
+ 
+ <div class="container">
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+  <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <%= image_tag('train3.png')%>
+        <div class="carousel-caption">
+          <h3>Odessa</h3>          
+        </div>
+      </div>
+
+      <div class="item">
+        <%= image_tag('train4.jpg')%>
+        <div class="carousel-caption">
+          <h3>Kharkiv</h3>          
+        </div>
+      </div>
+
+      <div class="item">
+        <%= image_tag('train5.jpg')%>
+        <div class="carousel-caption">
+          <h3>Lviv</h3>          
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <%= glyph(:next) %>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+ </div>

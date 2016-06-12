@@ -1,23 +1,26 @@
-<%= form_for([:admin, @train]) do |f| %>
-  <%= render 'common/errors', resource: @train %>
-  <div class="field">
-    <%= f.label :number %><br>
-    <%= f.text_field :number %>    
+
+<div class="container">    
+  <div calss="row" style="margin-top:50px;">
+    <div class="col-xs-12 col-sm-6">
+      <%= bootstrap_form_for([:admin, @train]) do |f| %>  
+        <div class="field">          
+          <%= f.text_field :number, placeholder:'Input train number' %>    
+        </div>
+        <div class="field">          
+          <%= f.collection_select :station_id, Station.all, :id, :name %>
+        </div>
+        <div class="field">          
+          <%= f.collection_select :route_id, Route.all, :id, :name %>
+        </div>
+        <p>
+          <% if @train.id %>
+            <%= link_to t('common.add_carriage'), new_admin_train_carriage_path(@train), class:'btn btn-success' %>
+          <% end %>
+        </p>
+        <div class="actions">
+          <%= f.submit t('.submit', action: @train.new_record? ? t('common.create') : t('common.edit')) %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :station %>
-    <%= f.collection_select :station_id, Station.all, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :route %>
-    <%= f.collection_select :route_id, Route.all, :id, :name %>
-  </div>
-  <p>
-    <% if @train.id %>
-      <%= link_to t('common.add_carriage'), new_admin_train_carriage_path(@train) %>
-    <% end %>
-  </p>
-  <div class="actions">
-    <%= f.submit t('.submit', action: @train.new_record? ? t('common.create') : t('common.edit')) %>
-  </div>
-<% end %>
+</div>

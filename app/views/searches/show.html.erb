@@ -1,20 +1,27 @@
 
 <h1><%= t('.title') %></h1>
-<% if @routes.count > 0 %>
+<% if !@routes.empty? %>
   <% @routes.each do |route|%>
-    <ul>
-      <li><%= route.name %></li>
+    <div class="list-group">
+      <div class="list-group-item dropdown"><%= route.name %>
       <% if route.trains.count > 0 %>
         <% route.trains.each do |train|%>
-        <p> Поезд номер : <%= train.number %>
-          <%= link_to t('.buy_ticket'), new_ticket_path(ticket: { train_id: train, start_station_id: params[:start_station], finish_station_id: params[:finish_station]} )%>
-        </p>        
-        <%= render 'schedule', start:@start, finish:@finish, route: route %>
+           <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= train.number %>
+              <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu">       
+              <%= render 'schedule', start:@start, finish:@finish, route: route %>
+            </div>
+          
+            <%= link_to t('.buy_ticket'), new_ticket_path(ticket: { train_id: train, start_station_id: params[:start_station], finish_station_id: params[:finish_station]} )%>
+          </div>
+        
         <%end%>
       <% else %>
         <h3><%= t('common.nothing_found')%></h3>
       <% end %>
-    </ul>
+    </div>
   <% end %>
 <% else %>
   <h3><%= t('common.nothing_found')%></h3>

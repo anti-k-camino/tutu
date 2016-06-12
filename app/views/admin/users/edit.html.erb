@@ -1,3 +1,6 @@
 <h1>Изменить пользователя</h1>
   <%= render 'form' %>
-<%= link_to 'Назад', admin_users_path %>
+<div class='form-group'>
+  <%= link_to t('common.main'), toolbar_admin_user_path(current_user), class:'btn' %>
+  <%= link_to t('common.back'), admin_users_path, class:'btn' %>
+</div>

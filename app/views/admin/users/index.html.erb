@@ -2,18 +2,20 @@
 
 <h1><%= t('.title')%></h1>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class='container'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <%= render @users %>
-  </tbody>
-</table>
+    <tbody>
+      <%= render @users %>
+    </tbody>
+  </table>
+</div>
 
-<br>
-<%= link_to t('common.main'), root_path %>
+
+<%= link_to t('common.main'), toolbar_admin_user_path(current_user), class:'btn'%>

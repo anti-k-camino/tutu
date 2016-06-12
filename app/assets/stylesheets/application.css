@@ -15,6 +15,7 @@
  */
 .container{
   margin-bottom:0px;
+  padding:0px;
 }
 .title{    
 }
@@ -26,29 +27,55 @@
   height: 120px;  
   padding-top:10px;
 }
-.bg-grey {
-  background-color: #f6f6f6;
+.bg-grey {  
+  height:400px;
+}
+.search_bg{
+  height:400px;
+  width:100%;
+  padding:0;
+  background-image: url('/assets/railway1.jpg'); 
 }
 .exit{
   float:right;
   padding-right:20px;
 }
 body{  
-  margin:40px;
-  background-color:#f4f1e9;
+  padding-bottom: 40px;
+  color: #5a5a5a;
+  height: 100%;
 }
-.search{
-  background-color:#ffffff;
-  padding-bottom:20px;
-  border-radius: 10px
+.search{  
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-left: 100px;
+  padding-bottom:40px;
+  background-color: white
 }
 .container.footer{  
-  bottom: 0;  
+  bottom: 0px;  
   height: 80px;
   color:white;
-  background-color: black;  
-  font-family: 'Pacifico', cursive;  
+  background-color: #5e82a6;  
+  padding: 20px;
+
 }
+ .carousel-inner img {        
+    width: 50%;
+    margin: auto;   
+}
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+}
+
+
 
 
 

@@ -1,10 +1,8 @@
 <tr>
   <td><%= user.name %></td>
-  <% if user.admin? %>
-    <td><%= t('common.admin') %></td>
-  <% else%>
-    <td><%= link_to t('common.show'), [:admin, user] %></td>
-    <td><%= link_to t('common.edit'), edit_admin_user_path(user) %></td>
-    <td><%= link_to t('common.delete'), [:admin, user], method: :delete, data: { confirm: "#{t('common.confirm')  }"} %></td>
+  <% if !user.admin? %>    
+    <td><%= link_to t('common.show'), [:admin, user], class:'btn' %></td>
+    <td><%= link_to t('common.edit'), edit_admin_user_path(user), class:'btn' %></td>
+    <td><%= link_to t('common.delete'), [:admin, user], class:'btn btn-danger', method: :delete, data: { confirm: "#{t('common.confirm')  }"} %></td>
   <% end %>
 </tr>

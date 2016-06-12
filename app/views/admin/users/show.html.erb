@@ -1,20 +1,25 @@
-<p>
-  <strong> Имя пользователя : </strong>
-  <%= @user.name %><br>
-  <strong> Email :</strong>
-  <%= @user.email %>
-</p>
-<p> Билеты у пользователя :</p>
-<% if @user.tickets.empty? %>
-  <p>У пользователя нету билетов</p>
-<% else %>
-  <ul>
-   <% @user.tickets.each do |ticket| %>
-    <li><%= link_to "#{ticket.number}", [:admin, ticket] %></li>
-   <% end %>
-  </ul>
-<% end %>
+<div class='panel panel-default'>
+  <div class='panel-body'>  
+      <h5><%= t('common.name')%>
+      <strong> <%= @user.name %></strong></h5>
+      <h5>Email :
+      <strong><%= @user.email %></strong></h5>
 
-<%= link_to 'Редактировать', edit_admin_user_path(@user) %> |
-<%= link_to 'Назад', admin_users_path %><br>
-<%= link_to 'Главная', '/'%>
+    <p> Билеты у пользователя :</p>
+    <% if @user.tickets.empty? %>
+      <p>У пользователя нету билетов</p>
+    <% else %>
+      <ul class='list-group'>
+       <% @user.tickets.each do |ticket| %>
+        <li class='list-group-item'><%= link_to "#{ticket.number}", [:admin, ticket] %></li>
+       <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>
+
+<div class='btn-group'>  
+  <%= link_to t('common.main'), toolbar_admin_user_path(current_user), class:'btn' %>
+  <%= link_to t('common.back'), admin_users_path, class:'btn' %>
+  <%= link_to t('common.edit'), edit_admin_user_path(@user), class:'btn' %> 
+</div>

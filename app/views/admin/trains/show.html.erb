@@ -1,36 +1,42 @@
-<p>
-  <strong> <%= t('.number')%></strong>
-  <%= @train.number %>
-</p>
-<p>
-  <strong><%= t('.station') %></strong>
-  <% if @train.station.present? %>
-    <%= @train.station.name %>
-  <% else%>
-    <%= t('common.nothing_mentioned')%>
-  <% end %>
-</p>
-<p>
-  <strong><%= t('.route')%></strong>
-  <% if @train.route.present? %>
-    <%= @train.route.name %>
-  <% else%>
-    <%= t('common.nothing_mentioned')%>
-  <% end %>
-</p>
-<p>
-  <strong><%= t('.carriages_quantity') %></strong>
-  <%= @train.carriages.count %><br>
-  <strong><%= t('.coupe') %></strong>  
-  <%= render 'links', resource: :CoupeCarriage %>
-  <strong><%= t('.economy') %></strong> 
-  <%= render 'links', resource: :EconomyCarriage %> 
-  <strong><%= t('.sv') %></strong> 
-  <%= render 'links', resource: :SvCarriage %>  
-  <strong><%= t('.sit') %></strong> 
-  <%= render 'links', resource: :SitonlyCarriage %>   
-</p>
+<div class='panel panel-default'>
+  <div class='panel-body'>  
+    <h5> <%= t('.number')%>
+    <strong><%= @train.number %></strong>
+    </h5>
+    <p>
+      <strong><%= t('.station') %></strong>
+      <% if @train.station.present? %>
+        <%= @train.station.name %>
+      <% else%>
+        <%= t('common.nothing_mentioned')%>
+      <% end %>
+    </p>
+    <p>
+      <strong><%= t('.route')%></strong>
+      <% if @train.route.present? %>
+        <%= @train.route.name %>
+      <% else%>
+        <%= t('common.nothing_mentioned')%>
+      <% end %>
+    </p>
+    <p>
+      <strong><%= t('.carriages_quantity') %></strong>
+      <%= @train.carriages.count %><br>
+      <strong><%= t('.coupe') %></strong>  
+      <%= render 'links', resource: :CoupeCarriage %>
+      <strong><%= t('.economy') %></strong> 
+      <%= render 'links', resource: :EconomyCarriage %> 
+      <strong><%= t('.sv') %></strong> 
+      <%= render 'links', resource: :SvCarriage %>  
+      <strong><%= t('.sit') %></strong> 
+      <%= render 'links', resource: :SitonlyCarriage %>   
+    </p>
+  </div>
+</div>
 
-<%= link_to t('common.edit'), edit_admin_train_path(@train) %> |
-<%= link_to t('common.back'), admin_trains_path %><br>
-<%= link_to t('common.main'), root_path %>
+
+<div clas='btn-group'>
+  <%= link_to t('common.main'), toolbar_admin_user_path(current_user), class:'btn' %>
+  <%= link_to t('common.back'), admin_trains_path, class:'btn' %>
+  <%= link_to t('common.edit'), edit_admin_train_path(@train), class:'btn' %>  
+</div>
