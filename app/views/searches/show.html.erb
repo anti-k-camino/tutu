@@ -6,15 +6,16 @@
       <div class="list-group-item dropdown"><%= route.name %>
       <% if route.trains.count > 0 %>
         <% route.trains.each do |train|%>
+          <%= "Поезд номер #{train.number}" %>
            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= train.number %>
+              Расписание
               <span class="caret"></span>
             </button>
             <div class="dropdown-menu">       
               <%= render 'schedule', start:@start, finish:@finish, route: route %>
             </div>
           
-            <%= link_to t('.buy_ticket'), new_ticket_path(ticket: { train_id: train, start_station_id: params[:start_station], finish_station_id: params[:finish_station]} )%>
+            <%= link_to t('.buy_ticket'), new_ticket_path(ticket: { train_id: train, start_station_id: params[:start_station], finish_station_id: params[:finish_station]}), class:'btn btn-success'%>
           </div>
         
         <%end%>
@@ -26,7 +27,8 @@
 <% else %>
   <h3><%= t('common.nothing_found')%></h3>
 <% end %>
-
-<%= link_to t('common.main'), root_path %> |
-<%= link_to t('.new_search'), new_search_path %> 
+<div class='btn-group'>  
+  <%= link_to t('common.main'), root_path, class:'btn'%>
+  <%= link_to t('.new_search'), new_search_path, class:'btn' %> 
+</div>
 
