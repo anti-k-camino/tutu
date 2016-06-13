@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160613190858) do
+ActiveRecord::Schema.define(version: 20160613191742) do
 
   create_table "carriages", force: :cascade do |t|
     t.integer  "number"
@@ -27,12 +27,15 @@ ActiveRecord::Schema.define(version: 20160613190858) do
   end
 
   add_index "carriages", ["id", "type"], name: "index_carriages_on_id_and_type"
+  add_index "carriages", ["train_id"], name: "index_carriages_on_train_id"
 
   create_table "routes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "routes", ["id"], name: "index_routes_on_id"
 
   create_table "stations", force: :cascade do |t|
     t.string   "name"
