@@ -1,12 +1,16 @@
-<% if @tickets.empty? %>
-  <p><%= t('.no_tickets')%></p>
-<% else %>
-  <p> <%= t('.user_tickets')%></p>
-  <ul class='list-group'>
-   <% @tickets.each do |ticket| %>   
-    <li class='list-group-item'><%= link_to "#{ticket.number}", ticket_path(ticket) %></li>
-   <% end %>
-  </ul>
-<% end %>
+<div class='container'>
+  <% if @tickets.empty? %>
+    <p><%= t('.no_tickets')%></p>
+  <% else %>
+    <p> <%= t('.user_tickets')%></p>
+    <div class='col-md-4'>
+      <ul class='list-group'>
+       <% @tickets.each do |ticket| %>          
+        <li class='list-group-item'> Билет : <%= link_to "#{ticket.number}", ticket_path(ticket) %></li>
+       <% end %>
+      </ul>
+    </div> 
+  <% end %>
+</div>
 
 <%= link_to t('.profile'), current_user, class:'btn' %>
