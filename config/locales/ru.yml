@@ -18,6 +18,7 @@ ru:
     diparture: 'Отправка'
     nothing_found: 'Ничего не найдено'
     nothing_mentioned: 'Не указано'
+    profile: 'Профиль'
     error: 'Обнаружены ошибки'
     add_carriage: 'Добавить вагон'
   welcome:

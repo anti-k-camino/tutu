@@ -60,7 +60,8 @@
     <a class="navbar-brand " href="http://thinknetica.com">Thinknetica</a>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav exit navbar-nav">
-        <% if user_signed_in? %>  
+        <% if user_signed_in? %>
+          <li><%= link_to t('common.profile'), user_path(current_user)%></li>  
           <li ><%= link_to t('common.exit'), destroy_user_session_path, method: :delete %></li>
             <% if current_user.admin? %>
               <li><%= link_to t('common.admin'), toolbar_admin_user_path(current_user) %></li>
