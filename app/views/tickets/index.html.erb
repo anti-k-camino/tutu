@@ -2,11 +2,11 @@
   <p><%= t('.no_tickets')%></p>
 <% else %>
   <p> <%= t('.user_tickets')%></p>
-  <ul>
+  <ul class='list-group'>
    <% @tickets.each do |ticket| %>   
-    <li><%= link_to "#{ticket.number}", ticket_path(ticket) %></li>
+    <li class='list-group-item'><%= link_to "#{ticket.number}", ticket_path(ticket) %></li>
    <% end %>
   </ul>
 <% end %>
 
-<%= link_to t('.profile'), current_user %>
+<%= link_to t('.profile'), current_user, class:'btn' %>

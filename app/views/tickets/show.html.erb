@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <h1>БИЛЕТ</h1>
-<table>
+<table class="table">
   <thead>
    <tr>
     <td width=100px>Маршрут</td>
@@ -30,9 +30,10 @@
   </tr>
   </tbody>
 </table>
+<div class='btn-group'>
+  <%= link_to t('common.main'), root_path, class:'btn' %>
+  <%= link_to t('common.back'), tickets_path, class:'btn' %> 
+  <%= link_to t('common.delete'), @ticket, class:'btn', method: :delete, data: { confirm: 'Вы уверенны?' } %>
+</div>
 
 
-
-<%= link_to 'Удалить', @ticket, method: :delete, data: { confirm: 'Вы уверенны?' } %><br>
-<%= link_to 'Главная', root_path %> |
-<%= link_to 'Назад', tickets_path %>
