@@ -1,6 +1,6 @@
 <tr>
   <td><%= ticket.number %></td>
-  <td><%= link_to 'Показать', admin_ticket_path(ticket) %></td>
-  <td><%= link_to 'Редактировать', edit_admin_ticket_path(ticket) %></td>
-  <td><%= link_to 'Разрушить', [:admin, ticket], method: :delete, data: { confirm: 'Вы уверенны?' } %></td>
+  <td><%= link_to t('common.show'), admin_ticket_path(ticket), class:'btn' %></td>
+  <td><%= link_to t('common.edit'), edit_admin_ticket_path(ticket), class:'btn btn-warning' %></td>
+  <td><%= link_to t('common.delete'), [:admin, ticket], class:'btn btn-danger', method: :delete, data: { confirm: 'Вы уверенны?' } %></td>
 </tr>

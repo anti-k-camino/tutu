@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Список билетов</h1>
+<h1><%= t('.tickets_list') %></h1>
 
-<table>
+<table class='table'>
   <thead>
     <tr>
-      <th>Номер</th>
+      <th><%= t('common.number') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +15,7 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'Новый билет', new_ticket_path %><br>
-<%= link_to 'Главная', '/'%>
+  <%= link_to t('common.main'), toolbar_admin_user_path(current_user), class:'btn'%>
+
+

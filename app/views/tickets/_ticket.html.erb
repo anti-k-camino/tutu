@@ -1,6 +1,6 @@
 <tr>
   <td><%= ticket.number %></td>
-  <td><%= link_to 'Показать', ticket %></td>
-  <td><%= link_to 'Редактировать', edit_ticket_path(ticket) %></td>
-  <td><%= link_to 'Разрушить', ticket, method: :delete, data: { confirm: 'Вы уверенны?' } %></td>
+  <td><%= link_to t('common.show'), ticket %></td>
+  <td><%= link_to t('common.edit'), edit_ticket_path(ticket) %></td>
+  <td><%= link_to t('common.destroy'), ticket, method: :delete, data: { confirm: "#{t('common.confirm')}" } %></td>
 </tr>

@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 <p>
-  <strong> Номер поезда </strong>
+  <strong><%= t('.train_number')%></strong>
   <% if @carriage.train.present? %>
     <%= @carriage.train.number %>
   <% else %>
-    Не указано
+    <%= t('common.nothing_mentioned') %>
   <% end %>
 </p>
 <p>
-  <strong> Тип вагона </strong>
+  <strong><%= t('.type')%></strong>
   <%= @carriage.type %><br>
-  <strong> Номер вагона </strong>
+  <strong><%= t('.carriage_number')%></strong>
   <%= @carriage.number %><br>
   <%= render @carriage.type.underscore %>
 </p>
-<%= link_to 'Редактировать', edit_admin_carriage_path(@carriage)%> | 
-<%= link_to 'Удалить', admin_carriage_path(@carriage), method: :delete, data: { confirm: 'Вы уверенны' } %><br>
-<%= link_to 'Назад', [:admin, @carriage.train]%><br>
-<%= link_to 'Главная', '/'%>
+<%= link_to t('common.edit'), edit_admin_carriage_path(@carriage)%> | 
+<%= link_to t('common.delete'), admin_carriage_path(@carriage), method: :delete, data: { confirm: t('common.confirm') } %><br>
+<%= link_to t('common.main'), root_path %> |
+<%= link_to t('common.back'), [:admin, @carriage.train]%>

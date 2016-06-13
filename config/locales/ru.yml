@@ -1,0 +1,126 @@
+ru:
+  common:
+    back: 'Haзад'
+    show: 'Показать'
+    main: 'Главная'
+    edit: 'Редактировать'
+    admin: 'Админ'    
+    delete: 'Удалить'
+    confirm: 'Вы уверенны ?'
+    name: 'Имя'
+    number: 'Номер'
+    create: 'Создать' 
+    selfname: 'Название'
+    search: 'Поиск'
+    arrival: 'Прибытие'
+    enter: 'Войти'
+    exit: 'Выйти'
+    diparture: 'Отправка'
+    nothing_found: 'Ничего не найдено'
+    nothing_mentioned: 'Не указано'
+    profile: 'Профиль'
+    error: 'Обнаружены ошибки'
+    add_carriage: 'Добавить вагон'
+  welcome:
+    index:
+      title: 'Покупайте билеты с нами TUTU'
+      stations: 'Cтанции'
+      trains: 'Поезда'
+      routes: 'Маршруты'
+      users: 'Пользователи'
+      tickets: 'Билеты'
+  searches:
+    new:
+      ticket_search: 'Поиск билетов'
+    show:
+      new_search: 'Новый поиск'
+      title: 'Возможные варианты'
+      buy_ticket: 'Купить билет'
+      arr: 'Прибывает в : '
+  users:
+    show:
+      name: 'Ваше имя'
+      tickets: 'Ваши билеты'
+  tickets:
+    index:      
+      user_tickets: 'Купленные вами билеты'
+      no_tickets: 'Вы пока не преобрели никаких билетов' 
+      profile: 'Профиль'           
+  admin:
+    carriages:
+      form:
+        submit: '%{action} вагон'
+      new:
+        title: 'Новый вагон'
+      show:
+        train_number: 'Номер поезда :' 
+        type: 'Тип вагона :'
+        carriage_number: 'Номер вагона :' 
+      edit:
+        title: 'Изменить вагон'
+      coupe_carriage:
+        top_seats: 'Верхних полок :'
+        bottom_seats : 'Нижних полок :'
+      economy_carriage:
+        side_top_seats: 'Боковых верхних полок :'
+        side_bottom_seats: 'Боковых нижних полок :'
+      sitonly_carriage:
+        sitonly_seats: 'Сидячих мест :'
+    stations:
+      form:
+        submit: '%{action} станцию'
+      new:
+        title: 'Новая станция'
+        link: 'Создать станцию'
+      index:
+        title: 'Cписок всех станций'
+        no_route: 'Станция ни в одном маршруте'
+        routes: 'Станция в таких маршрутах'
+        new: 'Создать станцию'       
+      edit:
+        title: 'Редактирование станции'  
+    trains:
+      form:
+        submit: '%{action} поезд'        
+      new:
+        title: 'Новый поезд'
+      edit:
+        title: 'Изменить поезд'
+      show:          
+        number: 'Номер'
+        station: 'Поезд на станции : '
+        route: 'Поезд на маршруте : '
+        carriages_quantity: 'Количество вагонов'
+        coupe: 'купейных : '
+        economy: 'плацкартных : '
+        sv: 'св : '
+        sit: 'сидячих : '
+      links:        
+        carriage_name: 'Вагон'        
+      index:
+        new_train: 'Создать новый поезд'
+        title: 'Cписок поездов'
+    routes:
+      index:
+        title: 'Список маршрутов'
+        new_route: 'Создать маршрут'
+      new:
+        title: 'Новый маршрут'
+      show:
+        no_stations: 'В маршруте нету станций'
+        no_trains: 'На маршруте нет поездов'
+        route_trains: 'На маршруте следующие поезда'
+        order: 'Pасписание'
+        position: 'Позиция'        
+        arrival: 'Прибытие  :'
+        departing: 'Отправка :'
+      edit:
+        title: 'Изменить маршрут' 
+      form:
+        submit: '%{action} маршрут' 
+    users:
+      index:
+        title: 'Список пользователей' 
+    tickets:
+      index:
+        tickets_list: 'Список билетов'  

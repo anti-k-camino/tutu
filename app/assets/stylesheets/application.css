@@ -13,3 +13,74 @@
  *= require_tree .
  *= require_self
  */
+.container{
+  margin-bottom:0px;
+  padding:0px;
+}
+.title{    
+}
+.container.jumbotron {
+  background-color: #f4511e; /* Orange */
+  color: #ffffff;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 120px;  
+  padding-top:10px;
+}
+.bg-grey {  
+  height:400px;
+}
+.search_bg{
+  height:400px;
+  width:100%;
+  padding:0;
+  background-image: url('/assets/railway1.jpg'); 
+}
+.exit{
+  float:right;
+  padding-right:20px;
+}
+body{  
+  padding-bottom: 40px;
+  color: #5a5a5a;
+  height: 100%;
+}
+.search{  
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-left: 100px;
+  padding-bottom:40px;
+  background-color: white
+}
+.container.footer{  
+  bottom: 0px;  
+  height: 80px;
+  color:white;
+  background-color: #5e82a6;  
+  padding: 20px;
+}
+.signin{
+   font-size:15px;
+   padding-top:100px;
+}
+.carousel-inner img {        
+    width: 50%;
+    margin: auto;   
+}
+
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+}
+
+
+
+
+
+

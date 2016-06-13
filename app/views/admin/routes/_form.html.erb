@@ -1,10 +1,11 @@
-<%= form_for([:admin, @route]) do |f| %>  
-  <%= render 'common/errors', resource: @route %>  
-  <div>
-    <%= f.label :station_ids, 'Станции' %>
-    <%= f.collection_select :station_ids, Station.all, :id, :name, {}, {multiple: true}%>   
-  </div>
-  <div class="actions">
-    <%= f.submit "#{ @route.new_record? ? 'Новый маршрут' : 'Изменить маршрут'}"%>
-  </div>
-<% end %>
+<div class='container'>
+  <%= bootstrap_form_for([:admin, @route]) do |f| %>  
+    <%= render 'common/errors', resource: @route %>  
+    <div class='col-md-5'>    
+      <%= f.collection_select :station_ids, Station.all, :id, :name, {}, {multiple: true}%>   
+    </div><br>
+    <div class="actions">
+      <%= f.submit t('.submit', action: @route.new_record? ? t('common.create') : t('common.edit'))%>
+    </div>
+  <% end %>
+</div>

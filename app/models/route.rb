@@ -34,6 +34,6 @@ class Route < ActiveRecord::Base
   end
 
   def set_stations
-    errors.add(:base, "Должно быть минимум две станции") if stations.size < 2
+    errors.add(:base, I18n.t('activerecord.errors.messages.two_names')) if stations.size < 2
   end
 end

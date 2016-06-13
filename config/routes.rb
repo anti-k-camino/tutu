@@ -17,7 +17,11 @@ Rails.application.routes.draw do
 
     resources :routes
     resources :tickets, except: [:new, :create]
-    resources :users, except: [:new, :create]
+    resources :users, except: [:new, :create] do
+      member do
+        get :toolbar
+      end
+    end
   end
 
   resources :users

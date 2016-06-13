@@ -1,4 +1,6 @@
-<h1>Изменить маршрут</h1>
+<h1><%= t('.title')%></h1>
 <%= render 'form' %>
-<%= link_to 'Назад', admin_routes_path %>
-<%= link_to 'Главная', '/' %>
+<div class='btn-group'>
+  <%= link_to t('common.main'), toolbar_admin_user_path(current_user), class:'btn' %>
+  <%= link_to t('common.back'), admin_routes_path, class:'btn' %>
+</div>

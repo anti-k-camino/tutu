@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 <h1>Билет</h1>
-<table>
+<table class="table">
   <thead>
-   <tr>
-    <td width=100px>Маршрут</td>
+   <tr>    
     <td>Поезд </td>
     <td>Посадка </td>
     <td>Отправка </td>
@@ -16,22 +15,22 @@
    </tr>
   </thead>
   <tbody>
-  <tr>
-   <td><%= @ticket.train.route.name %></td>
-   <td><%= @ticket.train.number %></td>  
-   <td><%= @ticket.start_station.name %></td>
-   <td><%= @ticket.departing.to_s(:time) %><br></td>
-   <td><%= @ticket.finish_station.name%></td>
-   <td><%= @ticket.arrival.to_s(:time) %><br></td>
-   <td><%= @ticket.number %></td>
-   <td><%= @ticket.name %></td>
-   <td><%= @ticket.surname %></td>  
-   <td><%= @ticket.user.name %></td>
+  <tr>    
+    <td><%= @ticket.train.number %></td>
+    <td><%= @ticket.start_station.name %></td>
+    <td><%= @ticket.departing.to_s(:time) %><br></td>
+    <td><%= @ticket.finish_station.name%></td>
+    <td><%= @ticket.arrival.to_s(:time) %><br></td>
+    <td><%= @ticket.number %></td>
+    <td><%= @ticket.name %></td>
+    <td><%= @ticket.surname %></td>  
+    <td><%= @ticket.user.name %></td>
   </tr>
   </tbody>
 </table>
 
 
-
-<%= link_to 'Назад', admin_user_path(@ticket.user) %> |
-<%= link_to 'Главная', '/'%>
+<div class='btn-group'>
+  <%= link_to t('common.main'), toolbar_admin_user_path(current_user), class:'btn' %>
+  <%= link_to t('common.back'), admin_user_path(@ticket.user), class:'btn' %> 
+</div>

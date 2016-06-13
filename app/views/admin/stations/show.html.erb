@@ -1,18 +1,21 @@
-<p>
-  <strong>Имя:</strong>
-  <%= @station.name %>
-</p>
-<%if @station.routes.empty?%>
-  <p>Эта станция ни водном маршруте</p>
-<% else %>
-  <p>Станция в таких маршрутах :</p>  
-  <ul>
-    <% @station.routes.each do |route|%>
-      <li><%= route.name %></li>
+<div class='panel panel-default'>
+  <div class='panel-body'>    
+    <h3><%= @station.name %></h3> 
+    <%if @station.routes.empty?%>
+      <h5><%= t('stations.all.no_route')%></h5>
+    <% else %>
+      <p><%= t('stations.all.routes')%></p>  
+      <ul class='list-group'>
+        <% @station.routes.each do |route|%>
+          <li class='list-group-item'><%= route.name %></li>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<% end %>
+ </div>
+</div>
 
-<%= link_to 'Редактировать', edit_admin_station_path(@station) %> |
-<%= link_to 'Назад', admin_stations_path %><br>
-<%= link_to 'Главная', '/'%>
+<div class='btn-group'>
+  <%= link_to t('common.main'), toolbar_admin_user_path(current_user), class:'btn' %>
+  <%= link_to t('common.back'), admin_stations_path, class:'btn'%>  
+  <%= link_to t('common.edit'), edit_admin_station_path(@station), class:'btn' %> 
+</div>

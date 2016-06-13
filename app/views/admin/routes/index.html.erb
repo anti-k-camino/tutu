@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Список маршрутов</h1>
+<h1><%= t('.title')%></h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Название</th>
+      <th><%= t('common.selfname')%></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +14,7 @@
    <%= render @routes %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'Новый маршрут', new_admin_route_path %><br>
-<%= link_to 'Главная', '/'%>
+<div class='btn-group'>
+  <%= link_to t('common.main'), toolbar_admin_user_path(current_user), class:'btn'%>
+  <%= link_to t('.new_route'), new_admin_route_path, class:'btn' %>
+</div>

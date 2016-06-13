@@ -1,0 +1,76 @@
+ru:
+  activerecord:
+    models:
+      station: 'Станция'
+      train: 'Поезд'
+      carriage: 'Вагон'
+      user: 'Пользователь'
+      ticket: 'Билет'
+      route: 'Mapшрут'
+    attributes:
+      carriage:
+        number: 'Номер'
+        type: 'Тип'
+        top_seats: 'Верхняя полка'
+        bottom_seats: 'Нижняя полка' 
+        side_top_seats: 'Боковая верхняя полка' 
+        side_bottom_seats: 'Боковая нижняя полка'
+        sitonly_seats: 'Сидячие места'        
+      station:
+        name: 'Название' 
+      user:
+        name: 'Имя' 
+        password: 'Пароль'
+        email: 'Электронная почта'   
+      train:
+        number: 'Номер'
+        station: 'Станция'
+        route: 'Маршрут'      
+      route:          
+        name: 'Название'
+        station_ids: 'Станции'
+      ticket:
+        surname: 'Фамилия'
+        name: 'Имя' 
+        number: 'Паспорт' 
+    errors:
+      messages:
+        blank: 'не может быть пустым'
+        two_names: 'Должно быть минимум две станции'
+      models:
+        station:
+          attributes:
+            name:
+              blank: 'станции не может быть пустым'
+        user:
+          attributes:
+            name:
+              blank: ', это поле пользователя не может быть пустым'
+            email:
+              blank: ', это поле пользователя не может быть пустым'
+        train:
+          attributes:
+            number:
+              blank: 'поезда не может быть пустым' 
+              taken: 'такой у поезда уже существует'          
+        carriage:
+          attributes:
+            number:
+              blank: 'вагона не может быть пустым' 
+              taken: 'у вагона уже существует'                           
+            top_seats:
+              blank: 'количество должно быть указано'
+              inclusion: 'количество должно быть указанно от 0 до 100'
+            bottom_seats:
+              blank: 'количество должно быть указано'
+              inclusion: 'количество должно быть указанно от 0 до 100'
+            side_top_seats:
+              blank: 'количество должно быть указано'
+              inclusion: 'количество должно быть указанно от 0 до 100'
+            side_bottom_seats:
+              blank: 'количество должно быть указано'
+              inclusion: 'количество должно быть указанно от 0 до 100'
+            sitonly_seats:
+              blank: 'количество должно быть указано'
+              inclusion: 'количество должно быть указанно от 0 до 100'
+        
