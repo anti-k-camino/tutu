@@ -23,7 +23,7 @@ class Admin::UsersController < Admin::BaseController
     redirect_to admin_users_path
   end
 
-  def toolbar    
+  def toolbar
   end
 
   private
