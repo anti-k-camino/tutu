@@ -9,19 +9,10 @@
             <%= "Поезд номер #{train.number}" %><br>               
             <ul class='list-group'>
               <li class='list-group-item'> <%= @start.name %><br>
-                <%= t('common.arrival') %>    
-                <%= @start.schedule_at(route, :arrival).to_s(:time) %>
-                <%= t('common.diparture') %>
-                <%= @start.schedule_at(route, :departing).to_s(:time) %>
+                <%= render 'schedule', start:@start, finish:@finish, route: route%>             
+              <%= link_to t('.buy_ticket'), new_ticket_path(ticket: { train_id: train, start_station_id: params[:start_station], finish_station_id: params[:finish_station]}), class:'btn btn-success'%> <br><br>
               </li> 
-              <li class='list-group-item'> <%= @finish.name %><br>
-                <%= t('common.arrival') %>
-                <%= @finish.schedule_at(route, :arrival).to_s(:time) %>
-                <%= t('common.diparture') %>
-                <%= @finish.schedule_at(route, :departing).to_s(:time) %>
-              </li>            
-            </ul>            
-            <%= link_to t('.buy_ticket'), new_ticket_path(ticket: { train_id: train, start_station_id: params[:start_station], finish_station_id: params[:finish_station]}), class:'btn btn-success'%> <br><br>                    
+            </ul>                             
           <%end%>
         <% else %>
           <h3><%= t('common.nothing_found')%></h3>

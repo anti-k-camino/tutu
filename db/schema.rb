@@ -101,13 +101,4 @@ ActiveRecord::Schema.define(version: 20160613193601) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-  create_table "wagons", force: :cascade do |t|
-    t.string   "types"
-    t.integer  "upper"
-    t.integer  "lower"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "train_id"
-  end
-
 end
