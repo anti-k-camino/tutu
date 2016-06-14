@@ -24,8 +24,8 @@ class Station < ActiveRecord::Base
   end
 
   protected
-
+  
   def station_route(route)
-    @station_route ||= stations_routes.where(route: route).first
+    @station_route = stations_routes.where(route: route).first
   end
 end

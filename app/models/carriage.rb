@@ -6,5 +6,5 @@ class Carriage < ActiveRecord::Base
   scope :coupe_carriages, -> { where(type: 'CoupeCarriage') }
   scope :economy_carriages, -> { where(type: 'EconomyCarriage') }
   scope :sv_carriages, -> { where(type: 'SvCarriage') }
-  scope :sitonly_carriages, -> { where(type: 'SitonlyCarriage') }
+  scope :sitonly_carriages, -> { where(type: 'SitonlyCarriage') }  
 end
