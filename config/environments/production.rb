@@ -73,25 +73,12 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-  #Mailer options for deploy
-  config.action_mailer.default_url_options = { host:"lit-wave-88263.herokuapp.com" }
-  #for postmark
+  # Mailer options for deploy
+  config.action_mailer.default_url_options = { host: 'lit-wave-88263.herokuapp.com' }
+  # for postmark
   config.action_mailer.delivery_method = :postmark
   config.action_mailer.postmark_settings = { api_token: ENV['POSTMARK_API_TOKEN'] }
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
-
-
-
-
-
-
-
-
-
-
-
-
-

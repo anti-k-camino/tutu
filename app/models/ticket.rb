@@ -7,11 +7,7 @@ class Ticket < ActiveRecord::Base
   after_create :send_notification
   after_destroy :send_delition
 
-
-
   validates :number, :start_station, :finish_station, :name, :surname, :user, presence: true
-
-
 
   def departing
     start_station.schedule_at(train.route, :departing)
@@ -28,10 +24,10 @@ class Ticket < ActiveRecord::Base
   private
 
   def send_notification
-    TicketsMailer.buy_ticket(self.user, self).deliver_now
+    TicketsMailer.buy_ticket(user, self).deliver_now
   end
 
   def send_delition
-    TicketsMailer.drop_ticket(self.user, self).deliver_now
+    TicketsMailer.drop_ticket(user, self).deliver_now
   end
 end
