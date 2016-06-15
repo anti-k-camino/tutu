@@ -6,7 +6,7 @@ class Station < ActiveRecord::Base
   has_many :finish_tickets, class_name: 'Ticket', foreign_key: :finish_ticket_id
   validates :name, presence: true
 
-  scope :ordered, -> { joins(:stations_routes).order('stations_routes.position').uniq }
+  scope :ordered, -> { joins(:stations_routes).select('stations_routes.*, stations.name, stations.id').order('stations_routes.position').uniq }
 
   def update_position_schedule(route, position, arrival, departing) # is renamed but left in one
     station_route = station_route(route) # method for the purpose of one query

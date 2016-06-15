@@ -1,14 +1,14 @@
 <ul class='list-group'>
   <li class='list-group-item'> <%= start.name %><br>
     <%= t('common.arrival') %>    
-    <%= start.schedule_at(route, :arrival).to_s(:time) %>
+    <%= start.schedule_at(route, :arrival) %>
     <%= t('common.diparture') %>
-    <%= start.schedule_at(route, :departing).to_s(:time) %>
+    <%= start.schedule_at(route, :departing) %>
   </li> 
   <li class='list-group-item'> <%= finish.name %><br>
     <%= t('common.arrival') %>
-    <%= finish.schedule_at(route, :arrival).to_s(:time) %>
+    <%= finish.schedule_at(route, :arrival)%>
     <%= t('common.diparture') %>
-    <%= finish.schedule_at(route, :departing).to_s(:time) %>
+    <%= finish.schedule_at(route, :departing) %>
   </li>            
 </ul>

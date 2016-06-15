@@ -5,6 +5,9 @@ class Ticket < ActiveRecord::Base
   belongs_to :finish_station, class_name: 'Station', foreign_key: :finish_station_id
 
   after_create :send_notification
+  after_destroy :send_delition
+
+
 
   validates :number, :start_station, :finish_station, :name, :surname, :user, presence: true
 
@@ -26,5 +29,9 @@ class Ticket < ActiveRecord::Base
 
   def send_notification
     TicketsMailer.buy_ticket(self.user, self).deliver_now
+  end
+
+  def send_delition
+    TicketsMailer.drop_ticket(self.user, self).deliver_now
   end
 end
