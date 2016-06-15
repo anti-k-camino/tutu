@@ -19,10 +19,10 @@
     <tbody>
       <% @route.stations.ordered.each do |station|%>
         <tr>
-          <td><%= station.name %><%= station.id %></td>          
+          <td><%= station.name %></td>          
           <td>
             <%= form_tag update_station_attributes_admin_station_path(station.id), method: :patch do %>              
-              <%= number_field_tag :position %>  
+              <%= number_field_tag :position, station.position_in(@route) %>  
               
               <%= label :arrival, t('.arrival') %>
              <!-- <%= time_field_tag :arrival, station.schedule_at(@route, :arrival) %> -->
