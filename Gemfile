@@ -5,6 +5,8 @@ ruby '2.2.5'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
+# for Postmark
+gem 'postmark-rails', '>= 0.10.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
