@@ -64,7 +64,8 @@
               <li><%= link_to t('common.admin'), toolbar_admin_user_path(current_user) %></li>
             <% end %>
         <% else %> 
-          <%= link_to 'Sign up', new_user_registration_path %>          
+          <%= link_to 'Поиск', new_search_path %>
+          <%= link_to 'Sign up', new_user_registration_path %>                  
           <%= bootstrap_form_for(:user, :url => session_path(:user), :html => { :class => 'navbar-form navbar-right' }) do |f| %>
             <%= f.check_box :remember_me %><br>
             <%= f.text_field :email, placeholder:"email", hide_label: true%>
