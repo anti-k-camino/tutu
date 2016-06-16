@@ -37,7 +37,7 @@
     <div class="navbar navbar-default navbar-static-top">
       <div class="container-fluid">
         <div class="navbar-header">        
-          <a class="navbar-brand" href="#">Tutu</a>
+          
         <div class="navbar-header">
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
@@ -49,15 +49,21 @@
 
    <nav class="navbar navbar-default">
     <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">WebSiteName</a>
+      <div class="navbar-header">    
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Главная', toolbar_admin_user_path(current_user) %></li>
+          <li><%= link_to 'Станции', admin_stations_path %></li>
+          <li><%= link_to 'Маршруты', admin_routes_path %></li>
+          <li><%= link_to 'Пользователи', admin_users_path %></li>
+          <li><%= link_to 'Поезда', admin_trains_path %></li>
+          <li><%= link_to 'Билеты', admin_tickets_path %></li>
+        </ul>
       </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul>
+        <div class="navbar-right">
+          <ul class="nav navbar-nav">
+            <li ><%= link_to t('common.exit'), destroy_user_session_path, method: :delete %></li>         
+          </ul>
+        </div>
     </div>
   </nav>
 

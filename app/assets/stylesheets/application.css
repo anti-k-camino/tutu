@@ -17,7 +17,9 @@
   margin-bottom:0px;
   padding:0px;
 }
-.title{    
+.btn.outline {
+  background: none;  
+  padding: 12px 22px;
 }
 .container.jumbotron {
   background-color: #f4511e; /* Orange */
@@ -26,6 +28,11 @@
   border-top-right-radius: 15px;
   height: 120px;  
   padding-top:10px;
+}
+.dropdown-menu{
+  padding: 15px;
+  min-width: 250px;
+  color:black;
 }
 .bg-grey {  
   height:400px;
@@ -68,6 +75,12 @@ body {
 .navbar{
   color:white;
   background-color: #00bfff; 
+  border:0;
+  border-radius:0;  
+}
+.navbar.navbar-default{
+  padding:0px;
+  margin-bottom:0px;
 }
 .signin{
    font-size:15px;

@@ -50,9 +50,10 @@
       </div>
     </div>
          
-<div class="navbar container navbar-default navbar-static-top">  
-    <div class="navbar-header col-sm-2 col-sm-offset-1"> 
-      <a class="navbar-brand " href="http://thinknetica.com">Thinknetica</a>
+<!--<div class="navbar container navbar-default navbar-static-top">  
+    <div class="navbar-header"> 
+      <a class="navbar-brand col-sm-2 col-sm-offset-1" href="http://thinknetica.com">Thinknetica</a>
+      <%= link_to 'Поиск', new_search_path , class:'navbar-brand btn btn-success col-sm-4 col-sm-offset-5'%>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav exit navbar-nav">
@@ -63,8 +64,7 @@
             <% if current_user.admin? %>
               <li><%= link_to t('common.admin'), toolbar_admin_user_path(current_user) %></li>
             <% end %>
-        <% else %> 
-          <%= link_to 'Поиск', new_search_path %>
+        <% else %>           
           <%= link_to 'Sign up', new_user_registration_path %>                  
           <%= bootstrap_form_for(:user, :url => session_path(:user), :html => { :class => 'navbar-form navbar-right' }) do |f| %>
             <%= f.check_box :remember_me %><br>
@@ -75,7 +75,78 @@
         <% end %>
       </ul>
     </div>
+</div>-->
+<div class="container">
+   <div class="row">
+      <div class="col-md-12">
+         <nav class="navbar navbar-default" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                <% unless user_signed_in? %>
+                  <li><%= link_to t('common.search_tickets'), new_search_path, class:'btn btn-primary outline'%></li>
+                <% end %>
+                  
+                  <li><a href="http://www.thinknetica.com">About Thinknetica</a></li>
+                  <li class="dropdown">
+                     <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="http://www.jquery2dotnet.com">Action</a></li>
+                        <li><a href="http://www.jquery2dotnet.com">Another action</a></li>
+                        <li><a href="http://www.jquery2dotnet.com">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="http://www.jquery2dotnet.com">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="http://www.jquery2dotnet.com">One more separated link</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <% if user_signed_in? %>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><%= link_to t('common.search'), new_search_path %></li>
+                  <li><%= link_to t('common.profile'), user_path(current_user)%></li>  
+                  <li><%= link_to t('common.exit'), destroy_user_session_path, method: :delete %></li>
+                </ul>
+                <% if current_user.admin? %>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><%= link_to t('common.admin'), toolbar_admin_user_path(current_user) %></li>
+                  </ul>
+                <% end %>
+                <% else %>
+                    <ul class="nav navbar-nav navbar-right">                      
+                      <li><%=link_to t('common.registration'), new_user_registration_path%></li>
+                        <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown"><%= t('common.enter') %><b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                            <li>
+                                 <div class="row">
+                                    <div class="col-md-12">                               
+                                        <%= bootstrap_form_for(:user, :url => session_path(:user), :html => { :class => 'form-group' }, id:"login-nav") do |f| %>                                                      
+                                          <%= f.text_field :email, placeholder:"email", hide_label: true%>         
+                                          <%= f.password_field :password, placeholder:"password", hide_label: true %>                                    
+                                          <%= f.check_box :remember_me %>                           
+                                          <%=f.submit t('common.enter'), :class => 'btn btn-success btn-block'%>
+                                        <% end %>                                   
+                                    </div>
+                                 </div>
+                            </li>                        
+                          </ul>
+                      </li>
+                    </ul>
+
+
+
+                <% end %>              
+             
+            </div>
+            <!-- /.navbar-collapse -->
+         </nav>
+      </div>
+   </div>
 </div>
+
 <div class="container block yeld_block">
   <div class="row">
     <div class="col-sm-12">
@@ -84,7 +155,6 @@
     </div>       
   </div>
 </div>
-
 <footer class="footer container">     
   <div class="col-md-4 col-md-offset-8">
     <p>&copy; Antonio Montana 2016</p> 

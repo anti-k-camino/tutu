@@ -2,6 +2,7 @@ ru:
   common:
     back: 'Haзад'
     show: 'Показать'
+    registration: 'Регистрация'
     main: 'Главная'
     edit: 'Редактировать'
     admin: 'Админ'    
@@ -12,6 +13,7 @@ ru:
     create: 'Создать' 
     selfname: 'Название'
     search: 'Поиск'
+    search_tickets: 'Поиск билетов'
     arrival: 'Прибытие'
     enter: 'Войти'
     exit: 'Выйти'
