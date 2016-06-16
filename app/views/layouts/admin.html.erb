@@ -35,13 +35,10 @@
   <body>
 
     <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Tutu</a>
+      <div class="container-fluid">
+        <div class="navbar-header">        
+          <a class="navbar-brand" href="#">Tutu</a>
+        <div class="navbar-header">
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li ><%= link_to t('common.exit'), destroy_user_session_path, method: :delete %></li>           
@@ -49,6 +46,23 @@
         </div>
       </div>
     </div>
+
+   <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">WebSiteName</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
 
     <div class="container">
       <div class="row">
