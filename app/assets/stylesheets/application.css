@@ -42,7 +42,8 @@
 }
 body {  
 }
-.yeld_block{  
+.yeld_block{
+  height:500px;  
   padding:0px;
 }
 .block{
