@@ -27,13 +27,13 @@ class Admin::StationsController < Admin::BaseController
   def create
     @station = Station.new(station_params)
 
-    respond_to do |format|
+    
       if @station.save
-        format.html { redirect_to [:admin, @station], notice: 'Станция успешно создана.' }
+        redirect_to admin_station_path(@station), notice: 'Станция успешно создана.'
       else
-        format.html { render :new }
+        render :new
       end
-    end
+    
   end
 
   # PATCH/PUT /stations/1
@@ -41,7 +41,7 @@ class Admin::StationsController < Admin::BaseController
   def update
     respond_to do |format|
       if @station.update(station_params)
-        format.html { redirect_to [:admin, @station], notice: 'Станция успешно изменена.' }
+        redirect_to admin_stations_path, notice: 'Станция успешно изменена.'
       else
         format.html { render :edit }
       end
