@@ -26,7 +26,7 @@ class Train < ActiveRecord::Base
   
   def send_message
     tickets.each do |ticket|
-      TrainsMailer.cauntion_train(ticket.user_id).deliver_now
+      TrainsMailer.cauntion_train(self.number, ticket.user_id).deliver_now
     end
   end
 end
