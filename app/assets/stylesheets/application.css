@@ -91,7 +91,9 @@ body {
     height:490px;
     margin: auto;   
 }
-
+.panel-body{
+  color:black;
+}
 
 .carousel-caption h3 {
     color: #fff !important;
