@@ -39,13 +39,13 @@ class Admin::StationsController < Admin::BaseController
   # PATCH/PUT /stations/1
   # PATCH/PUT /stations/1.json
   def update
-    respond_to do |format|
+    
       if @station.update(station_params)
         redirect_to admin_stations_path, notice: 'Станция успешно изменена.'
       else
-        format.html { render :edit }
+        render :edit 
       end
-    end
+    
   end
 
   # DELETE /stations/1
