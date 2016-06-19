@@ -1,8 +1,11 @@
 <tr>
-  <td><%= train.number %>
-      <%= render 'form', train: train %>
+  <td>
+    <div id="train_number_<%= train.id %>">
+      <%= train.number %>
+    </div>
+     <%= render 'form', train: train, hidden: true  %>
   </td>
   <td><%= link_to t('common.show'), [:admin, train], class:'btn' %></td>
-  <td><%= link_to t('common.edit'), edit_admin_train_path(train), class:'btn' %></td>
+  <td><%= link_to t('common.edit'), '', class:'btn btn-warning edit_train', data:{ train_id: train.id } %></td>
   <td><%= link_to t('common.delete'), [:admin, train],class:'btn btn-danger', method: :delete, data: { confirm: "#{t('common.confirm')}" } %></td>
 </tr>
