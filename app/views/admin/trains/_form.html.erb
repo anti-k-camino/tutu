@@ -1,7 +1,5 @@
 
-<div class="container">    
-  <div calss="row" style="margin-top:50px;">
-    <div class="col-xs-6 col-sm-6">
+
       <%= bootstrap_form_for([:admin, train]) do |f| %>  
         <div class="field">          
           <%= f.text_field :number, placeholder:'Input train number' %>    
@@ -21,6 +19,4 @@
           <%= f.submit t('.submit', action: train.new_record? ? t('common.create') : t('common.edit')) %>
         </div>
       <% end %>
-    </div>
-  </div>
-</div>
+  
