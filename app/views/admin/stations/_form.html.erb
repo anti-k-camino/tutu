@@ -1,8 +1,6 @@
 
-<div class="container">    
-  <div calss="row" style="margin-top:50px;">
-    <div class="col-xs-12 col-sm-6">
-      <%= bootstrap_form_for([:admin, station]) do |f| %>
+
+      <%= bootstrap_form_for [:admin, station], html:{ style: "display: #{ hidden ? 'none' : 'block'}"} do |f| %>
         <%= render 'common/errors', resource: station %>
         <div class="field ">          
           <%= f.text_field :name %>
@@ -11,6 +9,4 @@
           <%= f.submit t('.submit', action: station.new_record? ? t('common.create') : t('common.edit')) %>
         </div>
       <% end %>
-    </div>
-  </div>
-</div>
+  
