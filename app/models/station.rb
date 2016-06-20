@@ -4,6 +4,8 @@ class Station < ActiveRecord::Base
   has_many :routes, through: :stations_routes
   has_many :start_tickets, class_name: 'Ticket', foreign_key: :start_station_id
   has_many :finish_tickets, class_name: 'Ticket', foreign_key: :finish_ticket_id
+  
+
   validates :name, presence: true
 
   scope :ordered, -> { joins(:stations_routes).select('stations_routes.*, stations.name, stations.id').order('stations_routes.position').uniq }
@@ -22,7 +24,7 @@ class Station < ActiveRecord::Base
   def schedule_at(route, type)
     station_route(route).try(type)
   end
-
+  
   protected
 
   def station_route(route)

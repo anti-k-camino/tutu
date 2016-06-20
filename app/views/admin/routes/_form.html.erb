@@ -1,11 +1,11 @@
-<div class='container'>
-  <%= bootstrap_form_for([:admin, @route]) do |f| %>  
-    <%= render 'common/errors', resource: @route %>  
-    <div class='col-md-5'>    
-      <%= f.collection_select :station_ids, Station.all, :id, :name, {}, {multiple: true}%>   
-    </div><br>
+
+  <%= bootstrap_form_for [:admin, route], html:{ style: "display: #{ hidden ? 'none' : 'block' }"} do |f| %> 
+    <%= render 'common/errors', resource: route %>  
+    <div class="field">   
+      <%= f.collection_select :station_ids, Station.all, :id, :name, {}, {multiple: true}%>  
+    </div>
+    
     <div class="actions">
-      <%= f.submit t('.submit', action: @route.new_record? ? t('common.create') : t('common.edit'))%>
+      <%= f.submit t('.submit', action: route.new_record? ? t('common.create') : t('common.edit'))%>
     </div>
   <% end %>
-</div>
