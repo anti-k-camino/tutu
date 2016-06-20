@@ -12,7 +12,7 @@ class Station < ActiveRecord::Base
 
   def update_position_schedule(route, position, arrival, departing) # is renamed but left in one
     station_route = station_route(route) # method for the purpose of one query
-    if station_route
+    if station_route      
       station_route.update(position: position, arrival: arrival, departing: departing)
     end
   end

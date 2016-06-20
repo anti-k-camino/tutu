@@ -104,6 +104,9 @@ body {
 .carousel-caption h3 {
     color: #fff !important;
 }
+.field{
+  color:black;
+}
 
 @media (max-width: 600px) {
     .carousel-caption {
