@@ -107,6 +107,9 @@ body {
 .field{
   color:black;
 }
+.schmidt{
+  display: none;
+}
 
 @media (max-width: 600px) {
     .carousel-caption {
