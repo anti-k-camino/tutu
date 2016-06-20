@@ -2,7 +2,7 @@
 <%= render 'common/errors', resource: @carriage %>
  
   <%= f.number_field :number %>    
-  <%= f.select(:type, options_for_select([:CoupeCarriage, :EconomyCarriage, :SvCarriage, :SitonlyCarriage], :CoupeCarriage)) %>  
+  <%= f.select(:type, options_for_select(["", :CoupeCarriage, :EconomyCarriage, :SvCarriage, :SitonlyCarriage], :include_blank => true)) %>  
   
 
   <div class="schmidt CoupeCarriage">   
