@@ -4,7 +4,6 @@ $(document).ready(function(){
     var station_id = $(this).data('stationId');
     var form = $('#edit_station_' + station_id);
     var title = $('#station_name_' + station_id);
-
     if (!$(this).hasClass('cancel')){  
       $(this).html('Cancel')
       $(this).addClass('cancel');

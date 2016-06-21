@@ -4,8 +4,6 @@ $(document).ready(function(){
     var route_id = $(this).data('routeId');
     var form = $('#edit_route_' + route_id);
     var name = $('#route_name_' + route_id);
-
-
     if(!$(this).hasClass('cancel')){      
       $(this).html('Cancel');
       $(this).addClass('cancel');
@@ -13,7 +11,6 @@ $(document).ready(function(){
       $(this).html('Редактировать');
       $(this).removeClass('cancel');
     }
-
     form.toggle();
     name.toggle();
   });
