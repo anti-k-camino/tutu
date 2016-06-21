@@ -23,10 +23,12 @@ class Train < ActiveRecord::Base
   def counter(type_name)
     carriages.where(type: type_name)
   end
-  
+
   def send_message
-    tickets.each do |ticket|
-      TrainsMailer.cauntion_train(self.number, ticket.user_id).deliver_now
+    if number_changed?
+      tickets.each do |ticket|
+        TrainsMailer.cauntion_train(number, ticket.user_id).deliver_now 
+      end
     end
   end
 end

@@ -29,8 +29,8 @@ class Route < ActiveRecord::Base
 
   private
 
-  def set_name        
-    self.name = "#{stations.first.name}-#{stations.last.name}"    
+  def set_name
+    self.name = "#{stations.first.name}-#{stations.last.name}"
   end
 
   def set_stations

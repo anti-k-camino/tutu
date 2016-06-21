@@ -4,7 +4,6 @@ class Station < ActiveRecord::Base
   has_many :routes, through: :stations_routes
   has_many :start_tickets, class_name: 'Ticket', foreign_key: :start_station_id
   has_many :finish_tickets, class_name: 'Ticket', foreign_key: :finish_ticket_id
-  
 
   validates :name, presence: true
 
@@ -12,7 +11,7 @@ class Station < ActiveRecord::Base
 
   def update_position_schedule(route, position, arrival, departing) # is renamed but left in one
     station_route = station_route(route) # method for the purpose of one query
-    if station_route      
+    if station_route
       station_route.update(position: position, arrival: arrival, departing: departing)
     end
   end
@@ -24,7 +23,7 @@ class Station < ActiveRecord::Base
   def schedule_at(route, type)
     station_route(route).try(type)
   end
-  
+
   protected
 
   def station_route(route)
