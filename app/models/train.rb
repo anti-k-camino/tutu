@@ -3,6 +3,9 @@ class Train < ActiveRecord::Base
   belongs_to :route
   has_many :tickets
   has_many :carriages, dependent: :destroy
+
+  after_update :send_message
+
   validates :number, presence: true, uniqueness: true
 
   def carriage_order
@@ -19,5 +22,13 @@ class Train < ActiveRecord::Base
 
   def counter(type_name)
     carriages.where(type: type_name)
+  end
+
+  def send_message
+    if number_changed?
+      tickets.each do |ticket|
+        TrainsMailer.cauntion_train(number, ticket.user_id).deliver_now 
+      end
+    end
   end
 end

@@ -1,5 +1,4 @@
 class SearchesController < ApplicationController
-  
   before_action :load_stations, only: [:show]
 
   def new

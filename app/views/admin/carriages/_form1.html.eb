@@ -1,0 +1,27 @@
+<%= bootstrap_form_for [:admin, @train, @carriage.becomes(Carriage)] do |f|%>
+<%= render 'common/errors', resource: @carriage %>
+<div class="field">       
+  <%= f.select(:type, options_for_select([:CoupeCarriage, :EconomyCarriage, :SvCarriage, :SitonlyCarriage], :SitonlyCarriage)) %>
+</div>
+<div class="field">  
+  <%= f.number_field :number %>
+</div>  
+<div class="field">     
+  <%= f.number_field :top_seats %>
+</div> 
+<div class="field">     
+  <%= f.number_field :bottom_seats %>
+</div> 
+<div class="field">    
+  <%= f.number_field :side_top_seats %>
+</div> 
+<div class="field">      
+  <%= f.number_field :side_bottom_seats %>
+</div> 
+<div class="field">       
+  <%= f.number_field :sitonly_seats %>
+</div> 
+<div class="actions">   
+  <%= f.submit t('.submit', action: @carriage.new_record? ? t('common.create') : t('common.edit')) %>
+</div>
+<% end %>

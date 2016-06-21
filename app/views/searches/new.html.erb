@@ -3,7 +3,7 @@
   <div class="container-fluid search col-xs-12 col-md-8">
     <h1><%= t('.ticket_search') %></h1>
      <div class="row">
-      <%= bootstrap_form_tag url:'/search', :method => 'get', layout: :horizontal do %>
+      <%= bootstrap_form_tag url:'/search', :html =>{class:'form_search'}, :method => 'get',layout: :horizontal do %>
         <div class="col-md-4">       
           <%= select_tag :start_station, options_from_collection_for_select(@stations, :id, :name), class: 'form-control' %>
         </div> 
@@ -11,7 +11,7 @@
           <%= select_tag :finish_station, options_from_collection_for_select(@stations, :id, :name), class: 'form-control' %>      
         </div> 
         <div class="col-md-2 col-md-offset-1">
-          <%= submit_tag t('common.search'), class: 'btn btn-primary' %> 
+          <%= submit_tag t('common.search'), class: 'btn btn-primary find' %> 
         </div>   
       <% end %>
     </div>

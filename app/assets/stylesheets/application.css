@@ -34,6 +34,12 @@
   min-width: 250px;
   color:black;
 }
+table{
+  color:black;
+}
+.list-group{
+  color:black;
+}
 .bg-grey {  
   height:400px;
 }
@@ -91,10 +97,18 @@ body {
     height:490px;
     margin: auto;   
 }
-
+.panel-body{
+  color:black;
+}
 
 .carousel-caption h3 {
     color: #fff !important;
+}
+.field{
+  color:black;
+}
+.schmidt{
+  display: none;
 }
 
 @media (max-width: 600px) {

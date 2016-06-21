@@ -1,8 +1,6 @@
 
-<div class="container">    
-  <div calss="row" style="margin-top:50px;">
-    <div class="col-xs-12 col-sm-6">
-      <%= bootstrap_form_for([:admin, @train]) do |f| %>  
+
+      <%= bootstrap_form_for [:admin, train], html:{ style: "display: #{ hidden ? 'none' : 'block'}"} do |f| %>  
         <div class="field">          
           <%= f.text_field :number, placeholder:'Input train number' %>    
         </div>
@@ -13,14 +11,12 @@
           <%= f.collection_select :route_id, Route.all, :id, :name %>
         </div>
         <p>
-          <% if @train.id %>
-            <%= link_to t('common.add_carriage'), new_admin_train_carriage_path(@train), class:'btn btn-success' %>
+          <% if train.id %>
+            <%= link_to t('common.add_carriage'), new_admin_train_carriage_path(train), class:'btn btn-success' %>
           <% end %>
         </p>
         <div class="actions">
-          <%= f.submit t('.submit', action: @train.new_record? ? t('common.create') : t('common.edit')) %>
+          <%= f.submit t('.submit', action: train.new_record? ? t('common.create') : t('common.edit')) %>
         </div>
       <% end %>
-    </div>
-  </div>
-</div>
+  

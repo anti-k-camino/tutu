@@ -1,6 +1,6 @@
 <h1><%= t('.title')%></h1>
 
-<%= render 'form' %>
+<%= render 'form', station: @station %>
 
 <div class='btn-group'>
   <%= link_to t('common.main'), toolbar_admin_user_path(current_user), class:'btn' %>
